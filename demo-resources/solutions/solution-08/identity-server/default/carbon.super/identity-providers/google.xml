@@ -1,0 +1,300 @@
+<!--
+  ~
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  ~
+  -->
+
+<ns4:identityProvider xmlns:ns4="http://mgt.idp.carbon.wso2.org">
+    <ns1:alias xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">https://localhost:9443/oauth2/token</ns1:alias>
+    <ns1:certificate xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    <claimConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <localClaimDialect>true</localClaimDialect>
+        <roleClaimURI>http://wso2.org/claims/role</roleClaimURI>
+        <userClaimURI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </claimConfig>
+    <defaultProvisioningConnectorConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>true</enabled>
+        <name>googleapps</name>
+        <provisioningProperties>
+            <name>google_prov_application_name</name>
+            <value>demo-s8</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_admin_email</name>
+            <value>nilasini@wso2support.com</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_private_key</name>
+            <type>BLOB</type>
+            <value>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</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_service_acc_email</name>
+            <value>wso2demosuitesolutionservice@wso2demosuitesolution.iam.gserviceaccount.com</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <name>google_prov_familyname_claim_dropdown</name>
+            <value>http://wso2.org/claims/lastname</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <name>google_prov_givenname_claim_dropdown</name>
+            <value>http://wso2.org/claims/givenname</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_email_claim_dropdown</name>
+            <value>http://wso2.org/claims/emailaddress</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_domain_name</name>
+            <value>wso2support.com</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </defaultProvisioningConnectorConfig>
+    <ns1:displayName xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Solution-08 Google</ns1:displayName>
+    <ns1:enable xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">false</ns1:enable>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Microsoft</displayName>
+        <name>MicrosoftWindowsLiveAuthenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Google</displayName>
+        <name>GoogleOIDCAuthenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>AdditionalQueryParameters</name>
+            <value>scope=openid email profile</value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>SMS</displayName>
+        <name>SMSOTP</name>
+        <properties>
+            <name>sms_url</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>http_method</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>headers</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>payload</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>http_response</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Email</displayName>
+        <name>EmailOTP</name>
+        <properties>
+            <name>EmailAPI</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>Email</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>twitter</displayName>
+        <name>TwitterAuthenticator</name>
+        <properties>
+            <name>APIKey</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>APISecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Yahoo</displayName>
+        <name>YahooOAuth2Authenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>IWA</displayName>
+        <name>IWAKerberosAuthenticator</name>
+        <properties>
+            <name>SPNName</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>SPNPassword</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>UserStoreDomains</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Office365</displayName>
+        <name>Office365Authenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <ns1:federationHub xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">false</ns1:federationHub>
+    <ns1:homeRealmId xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    <ns1:identityProviderDescription xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Google outbound provision connector.</ns1:identityProviderDescription>
+    <ns1:identityProviderName xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">solution-08-google</ns1:identityProviderName>
+    <justInTimeProvisioningConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="JustInTimeProvisioningConfig">
+        <provisioningEnabled>false</provisioningEnabled>
+        <provisioningUserStore xsi:nil="1"/>
+    </justInTimeProvisioningConfig>
+    <permissionAndRoleConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd"/>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>false</enabled>
+        <name>salesforce</name>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <name>sf-token-endpoint</name>
+            <value>https://login.salesforce.com/services/oauth2/token</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>false</enabled>
+        <name>scim</name>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <defaultValue>false</defaultValue>
+            <name>scim-enable-pwd-provisioning</name>
+            <value>true</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>true</enabled>
+        <name>googleapps</name>
+        <provisioningProperties>
+            <name>google_prov_application_name</name>
+            <value>demo-s8</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_admin_email</name>
+            <value>nilasini@wso2support.com</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_private_key</name>
+            <type>BLOB</type>
+            <value>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</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_service_acc_email</name>
+            <value>wso2demosuitesolutionservice@wso2demosuitesolution.iam.gserviceaccount.com</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <name>google_prov_familyname_claim_dropdown</name>
+            <value>http://wso2.org/claims/lastname</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <name>google_prov_givenname_claim_dropdown</name>
+            <value>http://wso2.org/claims/givenname</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_email_claim_dropdown</name>
+            <value>http://wso2.org/claims/emailaddress</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>google_prov_domain_name</name>
+            <value>wso2support.com</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>false</enabled>
+        <name>spml</name>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <ns1:provisioningRole xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+</ns4:identityProvider>

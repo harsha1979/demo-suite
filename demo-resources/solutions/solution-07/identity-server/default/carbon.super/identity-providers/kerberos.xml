@@ -1,0 +1,237 @@
+<ns4:identityProvider xmlns:ns4="http://mgt.idp.carbon.wso2.org">
+    <ns1:alias xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">https://localhost:9443/oauth2/token</ns1:alias>
+    <ns1:certificate xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    <claimConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <localClaimDialect>true</localClaimDialect>
+        <roleClaimURI>http://wso2.org/claims/role</roleClaimURI>
+        <userClaimURI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </claimConfig>
+    <defaultAuthenticatorConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>IWA</displayName>
+        <enabled>true</enabled>
+        <name>IWAKerberosAuthenticator</name>
+        <properties>
+            <name>SPNName</name>
+            <value>principlename</value>
+        </properties>
+        <properties>
+            <name>SPNPassword</name>
+            <value>password</value>
+        </properties>
+        <properties>
+            <name>UserStoreDomains</name>
+            <value>solution-07-activedirectory</value>
+        </properties>
+    </defaultAuthenticatorConfig>
+    <ns1:displayName xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Solution-07 Kerberos</ns1:displayName>
+    <ns1:enable xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">true</ns1:enable>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Microsoft</displayName>
+        <name>MicrosoftWindowsLiveAuthenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Google</displayName>
+        <name>GoogleOIDCAuthenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>AdditionalQueryParameters</name>
+            <value>scope=openid email profile</value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>SMS</displayName>
+        <name>SMSOTP</name>
+        <properties>
+            <name>sms_url</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>http_method</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>headers</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>payload</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>http_response</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Email</displayName>
+        <name>EmailOTP</name>
+        <properties>
+            <name>EmailAPI</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>Email</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>twitter</displayName>
+        <name>TwitterAuthenticator</name>
+        <properties>
+            <name>APIKey</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>APISecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Yahoo</displayName>
+        <name>YahooOAuth2Authenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>IWA</displayName>
+        <enabled>true</enabled>
+        <name>IWAKerberosAuthenticator</name>
+        <properties>
+            <name>SPNName</name>
+            <value>principlename</value>
+        </properties>
+        <properties>
+            <name>SPNPassword</name>
+            <value>password</value>
+        </properties>
+        <properties>
+            <name>UserStoreDomains</name>
+            <value>solution-07-activedirectory</value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Office365</displayName>
+        <name>Office365Authenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value></value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value></value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <ns1:federationHub xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">false</ns1:federationHub>
+    <ns1:homeRealmId xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    <ns1:identityProviderDescription
+            xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Kerberos Identity Provider</ns1:identityProviderDescription>
+    <ns1:identityProviderName
+            xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">solution-07-kerberos</ns1:identityProviderName>
+    <justInTimeProvisioningConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="JustInTimeProvisioningConfig">
+        <provisioningEnabled>false</provisioningEnabled>
+        <provisioningUserStore xsi:nil="1"/>
+    </justInTimeProvisioningConfig>
+    <permissionAndRoleConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd"/>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>false</enabled>
+        <name>salesforce</name>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <name>sf-token-endpoint</name>
+            <value>https://login.salesforce.com/services/oauth2/token</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>false</enabled>
+        <name>scim</name>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties>
+            <defaultValue>false</defaultValue>
+            <name>scim-enable-pwd-provisioning</name>
+            <value>true</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>false</enabled>
+        <name>googleapps</name>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>false</enabled>
+        <name>spml</name>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <ns1:provisioningRole xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+</ns4:identityProvider>

@@ -1,0 +1,20 @@
+servers:
+  -
+    serverName: "identity-server"
+    instance: "default"
+    properties:
+      host: "localhost"
+      port: 9443
+      trustStore: "/servers/identity-server/trust-store/default-client-truststore.jks"
+      trustStorePassword: "wso2carbon"
+      userName: "admin"
+      password: "admin"
+      scimGroupEndpoint: "/wso2/scim/Groups"
+  -
+    serverName: "tomcat"
+    instance: "default"
+    properties:
+      host: "localhost"
+      port: 8080
+      userName: "tomcat"
+      password: "tomcat"

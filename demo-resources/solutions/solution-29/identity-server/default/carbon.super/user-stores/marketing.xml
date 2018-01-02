@@ -1,0 +1,441 @@
+<!--
+  ~
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  ~
+  -->
+
+<ns4:userStoreDTO  xmlns:ns4="http://org.apache.axis2/xsd">
+    <ns1:className xmlns:ns1="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">org.wso2.carbon.user.core.jdbc.JDBCUserStoreManager</ns1:className>
+    <ns1:description xmlns:ns1="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">marketing - user store is to provision to the marketing users.</ns1:description>
+    <ns1:domainId xmlns:ns1="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">solution-29-marketing</ns1:domainId>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>url</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>userName</name>
+        <value>wso2carbon</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>password</name>
+        <value>wso2carbon</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>driverName</name>
+        <value>org.h2.Driver</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>Disabled</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ReadOnly</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ReadGroups</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>WriteGroups</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UsernameJavaRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UsernameJavaScriptRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UsernameJavaRegExViolationErrorMsg</name>
+        <value>Username pattern policy violated.</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordJavaRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordJavaScriptRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordJavaRegExViolationErrorMsg</name>
+        <value>Password pattern policy violated.</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RolenameJavaRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RolenameJavaScriptRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>CaseInsensitiveUsername</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UniqueID</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>SCIMEnabled</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>IsBulkImportSupported</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordDigest</name>
+        <value>SHA-256</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MultiAttributeSeparator</name>
+        <value>,</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>StoreSaltedPassword</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MaxUserNameListLength</name>
+        <value>100</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MaxRoleNameListLength</name>
+        <value>100</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserRolesCacheEnabled</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameUniqueAcrossTenants</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>validationQuery</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>validationInterval</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>CountRetrieverClass</name>
+        <value>org.wso2.carbon.identity.user.store.count.jdbc.JDBCUserStoreCountRetriever</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>SelectUserSQL</name>
+        <value>SELECT * FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>SelectUserSQLCaseInsensitive</name>
+        <value>SELECT * FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetRoleListSQL</name>
+        <value>SELECT UM_ROLE_NAME, UM_TENANT_ID, UM_SHARED_ROLE FROM UM_ROLE WHERE UM_ROLE_NAME LIKE ? AND UM_TENANT_ID=? AND UM_SHARED_ROLE ='0' ORDER BY UM_ROLE_NAME</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetSharedRoleListSQL</name>
+        <value>SELECT UM_ROLE_NAME, UM_TENANT_ID, UM_SHARED_ROLE FROM UM_ROLE WHERE UM_ROLE_NAME LIKE ? AND UM_SHARED_ROLE ='1' ORDER BY UM_ROLE_NAME</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserFilterSQL</name>
+        <value>SELECT UM_USER_NAME FROM UM_USER WHERE UM_USER_NAME LIKE ? AND UM_TENANT_ID=? ORDER BY UM_USER_NAME</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserFilterSQLCaseInsensitive</name>
+        <value>SELECT UM_USER_NAME FROM UM_USER WHERE LOWER(UM_USER_NAME) LIKE LOWER(?) AND UM_TENANT_ID=? ORDER BY UM_USER_NAME</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserRoleSQL</name>
+        <value>SELECT UM_ROLE_NAME FROM UM_USER_ROLE, UM_ROLE, UM_USER WHERE UM_USER.UM_USER_NAME=? AND UM_USER.UM_ID=UM_USER_ROLE.UM_USER_ID AND UM_ROLE.UM_ID=UM_USER_ROLE.UM_ROLE_ID AND UM_USER_ROLE.UM_TENANT_ID=? AND UM_ROLE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserRoleSQLCaseInsensitive</name>
+        <value>SELECT UM_ROLE_NAME FROM UM_USER_ROLE, UM_ROLE, UM_USER WHERE LOWER(UM_USER.UM_USER_NAME)=LOWER(?) AND UM_USER.UM_ID=UM_USER_ROLE.UM_USER_ID AND UM_ROLE.UM_ID=UM_USER_ROLE.UM_ROLE_ID AND UM_USER_ROLE.UM_TENANT_ID=? AND UM_ROLE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserSharedRoleSQL</name>
+        <value>SELECT UM_ROLE_NAME, UM_ROLE.UM_TENANT_ID, UM_SHARED_ROLE FROM UM_SHARED_USER_ROLE INNER JOIN UM_USER ON UM_SHARED_USER_ROLE.UM_USER_ID = UM_USER.UM_ID INNER JOIN UM_ROLE ON UM_SHARED_USER_ROLE.UM_ROLE_ID = UM_ROLE.UM_ID WHERE UM_USER.UM_USER_NAME = ? AND UM_SHARED_USER_ROLE.UM_USER_TENANT_ID = UM_USER.UM_TENANT_ID AND UM_SHARED_USER_f9cROLE.UM_ROLE_TENANT_ID = UM_ROLE.UM_TENANT_ID AND UM_SHARED_USER_ROLE.UM_USER_TENANT_ID = ? </value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserSharedRoleSQLCaseInsensitive</name>
+        <value>SELECT UM_ROLE_NAME, UM_ROLE.UM_TENANT_ID, UM_SHARED_ROLE FROM UM_SHARED_USER_ROLE INNER JOIN UM_USER ON UM_SHARED_USER_ROLE.UM_USER_ID = UM_USER.UM_ID INNER JOIN UM_ROLE ON UM_SHARED_USER_ROLE.UM_ROLE_ID = UM_ROLE.UM_ID WHERE LOWER(UM_USER.UM_USER_NAME) = LOWER(?) AND UM_SHARED_USER_ROLE.UM_USER_TENANT_ID = UM_USER.UM_TENANT_ID AND UM_SHARED_USER_ROLE.UM_ROLE_TENANT_ID = UM_ROLE.UM_TENANT_ID AND UM_SHARED_USER_ROLE.UM_USER_TENANT_ID = ? </value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>IsRoleExistingSQL</name>
+        <value>SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserListOfRoleSQL</name>
+        <value>SELECT UM_USER_NAME FROM UM_USER_ROLE, UM_ROLE, UM_USER WHERE UM_ROLE.UM_ROLE_NAME=? AND UM_USER.UM_ID=UM_USER_ROLE.UM_USER_ID AND UM_ROLE.UM_ID=UM_USER_ROLE.UM_ROLE_ID AND UM_USER_ROLE.UM_TENANT_ID=? AND UM_ROLE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserListOfSharedRoleSQL</name>
+        <value>SELECT UM_USER_NAME FROM UM_SHARED_USER_ROLE INNER JOIN UM_USER ON UM_SHARED_USER_ROLE.UM_USER_ID = UM_USER.UM_ID INNER JOIN UM_ROLE ON UM_SHARED_USER_ROLE.UM_ROLE_ID = UM_ROLE.UM_ID WHERE UM_ROLE.UM_ROLE_NAME= ? AND UM_SHARED_USER_ROLE.UM_USER_TENANT_ID = UM_USER.UM_TENANT_ID AND UM_SHARED_USER_ROLE.UM_ROLE_TENANT_ID = UM_ROLE.UM_TENANT_ID</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>IsUserExistingSQL</name>
+        <value>SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>IsUserExistingSQLCaseInsensitive</name>
+        <value>SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserPropertiesForProfileSQL</name>
+        <value>SELECT UM_ATTR_NAME, UM_ATTR_VALUE FROM UM_USER_ATTRIBUTE, UM_USER WHERE UM_USER.UM_ID = UM_USER_ATTRIBUTE.UM_USER_ID AND UM_USER.UM_USER_NAME=? AND UM_PROFILE_ID=? AND UM_USER_ATTRIBUTE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserPropertiesForProfileSQLCaseInsensitive</name>
+        <value>SELECT UM_ATTR_NAME, UM_ATTR_VALUE FROM UM_USER_ATTRIBUTE, UM_USER WHERE UM_USER.UM_ID = UM_USER_ATTRIBUTE.UM_USER_ID AND LOWER(UM_USER.UM_USER_NAME)=LOWER(?) AND UM_PROFILE_ID=? AND UM_USER_ATTRIBUTE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserPropertyForProfileSQL</name>
+        <value>SELECT UM_ATTR_VALUE FROM UM_USER_ATTRIBUTE, UM_USER WHERE UM_USER.UM_ID = UM_USER_ATTRIBUTE.UM_USER_ID AND UM_USER.UM_USER_NAME=? AND UM_ATTR_NAME=? AND UM_PROFILE_ID=? AND UM_USER_ATTRIBUTE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserPropertyForProfileSQLCaseInsensitive</name>
+        <value>SELECT UM_ATTR_VALUE FROM UM_USER_ATTRIBUTE, UM_USER WHERE UM_USER.UM_ID = UM_USER_ATTRIBUTE.UM_USER_ID AND LOWER(UM_USER.UM_USER_NAME)=LOWER(?) AND UM_ATTR_NAME=? AND UM_PROFILE_ID=? AND UM_USER_ATTRIBUTE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserLisForPropertySQL</name>
+        <value>SELECT f9cUM_USER_NAME FROM UM_USER, UM_USER_ATTRIBUTE WHERE UM_USER_ATTRIBUTE.UM_USER_ID = UM_USER.UM_ID AND UM_USER_ATTRIBUTE.UM_ATTR_NAME =? AND UM_USER_ATTRIBUTE.UM_ATTR_VALUE LIKE ? AND UM_USER_ATTRIBUTE.UM_PROFILE_ID=? AND UM_USER_ATTRIBUTE.UM_TENANT_ID=? AND UM_USER.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetProfileNamesSQL</name>
+        <value>SELECT DISTINCT UM_PROFILE_ID FROM UM_USER_ATTRIBUTE WHERE UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserProfileNamesSQL</name>
+        <value>SELECT DISTINCT UM_PROFILE_ID FROM UM_USER_ATTRIBUTE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserProfileNamesSQLCaseInsensitive</name>
+        <value>SELECT DISTINCT UM_PROFILE_ID FROM UM_USER_ATTRIBUTE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserIDFromUserNameSQL</name>
+        <value>SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserIDFromUserNameSQLCaseInsensitive</name>
+        <value>SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetUserNameFromTenantIDSQL</name>
+        <value>SELECT UM_USER_NAME FROM UM_USER WHERE UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetTenantIDFromUserNameSQL</name>
+        <value>SELECT UM_TENANT_ID FROM UM_USER WHERE UM_USER_NAME=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GetTenantIDFromUserNameSQLCaseInsensitive</name>
+        <value>SELECT UM_TENANT_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserSQL</name>
+        <value>INSERT INTO UM_USER (UM_USER_NAME, UM_USER_PASSWORD, UM_SALT_VALUE, UM_REQUIRE_CHANGE, UM_CHANGED_TIME, UM_TENANT_ID) VALUES (?, ?, ?, ?, ?, ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserToRoleSQL</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_USER_ID, UM_ROLE_ID, UM_TENANT_ID) VALUES ((SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?), ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserToRoleSQLCaseInsensitive</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_USER_ID, UM_ROLE_ID, UM_TENANT_ID) VALUES ((SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?), ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddRoleSQL</name>
+        <value>INSERT INTO UM_ROLE (UM_ROLE_NAME, UM_TENANT_ID) VALUES (?, ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddSharedRoleSQL</name>
+        <value>UPDATE UM_ROLE SET UM_SHARED_ROLE = ? WHERE UM_ROLE_NAME = ? AND UM_TENANT_ID = ?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddRoleToUserSQL</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_ROLE_ID, UM_USER_ID, UM_TENANT_ID) VALUES ((SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAMf9cE=? AND UM_TENANT_ID=?), ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddSharedRoleToUserSQL</name>
+        <value>INSERT INTO UM_SHARED_USER_ROLE (UM_ROLE_ID, UM_USER_ID, UM_USER_TENANT_ID, UM_ROLE_TENANT_ID) VALUES ((SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?), ?, ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddSharedRoleToUserSQLCaseInsensitive</name>
+        <value>INSERT INTO UM_SHARED_USER_ROLE (UM_ROLE_ID, UM_USER_ID, UM_USER_TENANT_ID, UM_ROLE_TENANT_ID) VALUES ((SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?), (SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?), ?, ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RemoveUserFromSharedRoleSQL</name>
+        <value>DELETE FROM UM_SHARED_USER_ROLE WHERE   UM_ROLE_ID=(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?) AND UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_USER_TENANT_ID=? AND UM_ROLE_TENANT_ID = ?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RemoveUserFromRoleSQLCaseInsensitive</name>
+        <value>DELETE FROM UM_USER_ROLE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?) AND UM_ROLE_ID=(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RemoveUserFromRoleSQL</name>
+        <value>DELETE FROM UM_USER_ROLE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_ROLE_ID=(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RemoveUserFromRoleSQLCaseInsensitive</name>
+        <value>DELETE FROM UM_USER_ROLE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?) AND UM_ROLE_ID=(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RemoveRoleFromUserSQL</name>
+        <value>DELETE FROM UM_USER_ROLE WHERE UM_ROLE_ID=(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?) AND UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RemoveRoleFromUserSQLCaseInsensitive</name>
+        <value>DELETE FROM UM_USER_ROLE WHERE UM_ROLE_ID=(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?) AND UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>DeleteRoleSQL</name>
+        <value>DELETE FROM UM_ROLE WHERE UM_ROLE_NAME = ? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>OnDeleteRoleRemoveUserRoleMappingSQL</name>
+        <value>DELETE FROM UM_USER_ROLE WHERE UM_ROLE_ID=(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>DeleteUserSQL</name>
+        <value>DELETE FROM UM_USER WHERE UM_USER_NAME = ? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>DeleteUserSQLCaseInsensitive</name>
+        <value>DELETE FROM UM_USER WHERE LOf9cWER(UM_USER_NAME) = LOWER(?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>OnDeleteUserRemoveUserRoleMappingSQL</name>
+        <value>DELETE FROM UM_USER_ROLE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>OnDeleteUserRemoveUserAttributeSQL</name>
+        <value>DELETE FROM UM_USER_ATTRIBUTE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>OnDeleteUserRemoveUserAttributeSQLCaseInsensitive</name>
+        <value>DELETE FROM UM_USER_ATTRIBUTE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UpdateUserPasswordSQL</name>
+        <value>UPDATE UM_USER SET UM_USER_PASSWORD= ?, UM_SALT_VALUE=?, UM_REQUIRE_CHANGE=?, UM_CHANGED_TIME=? WHERE UM_USER_NAME= ? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UpdateUserPasswordSQLCaseInsensitive</name>
+        <value>UPDATE UM_USER SET UM_USER_PASSWORD= ?, UM_SALT_VALUE=?, UM_REQUIRE_CHANGE=?, UM_CHANGED_TIME=? WHERE LOWER(UM_USER_NAME)= LOWER(?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UpdateRoleNameSQL</name>
+        <value>UPDATE UM_ROLE set UM_ROLE_NAME=? WHERE UM_ROLE_NAME = ? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserPropertySQL</name>
+        <value>INSERT INTO UM_USER_ATTRIBUTE (UM_USER_ID, UM_ATTR_NAME, UM_ATTR_VALUE, UM_PROFILE_ID, UM_TENANT_ID) VALUES ((SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?), ?, ?, ?, ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UpdateUserPropertySQL</name>
+        <value>UPDATE UM_USER_ATTRIBUTE SET UM_ATTR_VALUE=? WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_ATTR_NAME=? AND UM_PROFILE_ID=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UpdateUserPropertySQLCaseInsensitive</name>
+        <value>UPDATE UM_USER_ATTRIBUTE SET UM_ATTR_VALUE=? WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?) AND UM_ATTR_NAME=? AND UM_PROFILE_ID=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>DeleteUserPropertySQL</name>
+        <value>UPDATE UM_USER_ATTRIBUTE SET UM_ATTR_VALUE=? WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?) AND UM_ATTR_NAME=? AND UM_PROFILE_ID=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>DeleteUserPropertySQLCaseInsensitive</name>
+        <value>DELETE FROM UM_USER_ATTRIBUTE WHERE UM_USER_ID=(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?) AND UM_ATTR_NAME=? AND UM_PROFILE_ID=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameUniqueAcrossTenantsSQL</name>
+        <value>SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameUniqueAcrossTenantsSQLCaseInsensitive</name>
+        <value>SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>IsDomainExistingSQL</name>
+        <value>SELECT UM_DOMAIN_ID FROM UM_DOMAIN WHERE UM_DOMAIN_NAME=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddDomainSQL</name>
+        <value>INSERT INTO UM_DOMAIN (UM_DOMAIN_NAME, UM_TENANT_ID) VALUES (?, ?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserToRoleSQL-mssql</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_USER_ID, UM_ROLE_ID, UM_TENANT_ID) SELECT (SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?),(?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddRoleToUserSQL-mssql</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_ROLE_ID, UM_USER_ID, UM_TENANT_ID) SELECT (SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?), (?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserPropertySQL-mssql</name>
+        <value>INSERT INTO UM_USER_ATTRIBUTE (UM_USER_ID, UM_ATTR_NAME, UM_ATTR_VALUE, UM_PROFILE_ID, UM_TENANT_ID) SELECT (SELECT UM_ID FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?), (?), (?), (?), (?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserToRoleSQLCaseInsensitive-mssql</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_USER_ID, UM_ROLE_ID, UM_TENANT_ID) SELECT (SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?),(?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddRoleToUserSQLCaseInsensitive-mssql</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_ROLE_ID, UM_USER_ID, UM_TENANT_ID) SELECT (SELECT UM_ID FROM UM_ROLE WHERE UM_ROLE_NAME=? AND UM_TENANT_ID=?),(SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?), (?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserPropertySQLCaseInsensitive-mssql</name>
+        <value>INSERT INTO UM_USER_ATTRIBUTE (UM_USER_ID, UM_ATTR_NAME, UM_ATTR_VALUE, UM_PROFILE_ID, UM_TENANT_ID) SELECT (SELECT UM_ID FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?), (?), (?), (?), (?)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserToRoleSQL-openedge</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_USER_ID, UM_ROLE_ID, UM_TENANT_ID) SELECT UU.UM_ID, UR.UM_ID, ? FROM UM_USER UU, UM_ROLE UR WHERE UU.UM_USER_NAME=? AND UU.UM_TENANT_ID=? AND UR.UM_ROLE_NAME=? AND UR.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddRoleToUserSQL-openedge</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_ROLE_ID, UM_USER_ID, UM_TENANT_ID) SELECT UR.UM_ID, UU.UM_ID, ? FROM UM_ROLE UR, UM_USER UU WHERE UR.UM_ROLE_NAME=? AND UR.UM_TENANT_ID=? AND UU.UM_USER_NAME=? AND UU.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserPropertySQL-openedge</name>
+        <value>INSERT INTO UM_USER_ATTRIBUTE (UM_USER_ID, UM_ATTR_NAME, UM_ATTR_VALUE, UM_PROFILE_ID, UM_TENANT_ID) SELECT UM_ID, ?, ?, ?, ? FROM UM_USER WHERE UM_USER_NAME=? AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserToRoleSQLCaseInsensitive-openedge</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_USER_ID, UM_ROLE_ID, UM_TENANT_ID) SELECT UU.UM_ID, UR.UM_ID, ? FROM UM_USER UU, UM_ROLE UR WHERE LOWER(UU.UM_USER_NAME)=LOWER(?) AND UU.UM_TENANT_ID=? AND UR.UM_ROLE_NAME=? AND UR.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddRoleToUserSQLCaseInsensitive-openedge</name>
+        <value>INSERT INTO UM_USER_ROLE (UM_ROLE_ID, UM_USER_ID, UM_TENANT_ID) SELECT UR.UM_ID, UU.UM_ID, ? FROM UM_ROLE UR, UM_USER UU WHERE UR.UM_ROLE_NAME=? AND UR.UM_TENANT_ID=? AND LOWER(UU.UM_USER_NAME)=LOWER(?) AND UU.UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>AddUserPropertySQLCaseInsensitive-openedge</name>
+        <value>INSERT INTO UM_USER_ATTRIBUTE (UM_USER_ID, UM_ATTR_NAME, UM_ATTR_VALUE, UM_PROFILE_ID, UM_TENANT_ID) SELECT UM_ID, ?, ?, ?, ? FROM UM_USER WHERE LOWER(UM_USER_NAME)=LOWER(?) AND UM_TENANT_ID=?</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ClaimOperationsSupported</name>
+        <value>true</value>
+    </properties>
+</ns4:userStoreDTO>

@@ -1,0 +1,48 @@
+serviceProvider:
+  name: "Solution-03-SP"
+  description: "Solution-03-SP Desc"
+  inboundAuthenticationConfig:
+    inboundAuthenticationRequestConfigs:
+      -
+        friendlyName: "solution-03-francesca.com"
+        inboundAuthKey: "solution-03-francesca.com"
+        inboundAuthType: "samlsso"
+        inboundConfigType: "standardAPP"
+        properties:
+          -
+            name: "issuer"
+            value: "solution-03-francesca.com"
+          -
+            name: "assertionConsumerUrl"
+            value: "http://localhost:8080/solution-03-francesca.com/samlcallback"
+          -
+            name: "doSignAssertions"
+            value: "true"
+  localAndOutBoundAuthenticationConfig:
+    isAlwaysSendBackAuthenticatedListOfIdPs: false
+    authenticationType: "flow"
+    isEnableAuthorization: false
+    isUseTenantDomainInLocalSubjectIdentifier: false
+    isUseUserstoreDomainInLocalSubjectIdentifier: false
+    authenticationSteps:
+      -
+        isAttributeStep: true
+        stepOrder: 1
+        isSubjectStep: true
+        federatedIdentityProviders:
+          -
+            identityProviderName: "Twitter-S3"
+            federatedAuthenticatorConfigs:
+              -
+                name: "TwitterAuthenticator"
+                displayName: "twitter"
+          -
+            identityProviderName: "Google-S3"
+            federatedAuthenticatorConfigs:
+              -
+                name: "GoogleOIDCAuthenticator"
+                displayName: "Google"
+        localAuthenticatorConfigs:
+          -
+            name: "BasicAuthenticator"
+            displayName: "basic"

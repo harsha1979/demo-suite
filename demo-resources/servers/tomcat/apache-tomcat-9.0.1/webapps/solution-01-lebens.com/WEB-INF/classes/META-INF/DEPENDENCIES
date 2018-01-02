@@ -1,0 +1,83 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+lebens.com
+
+
+From: 'an unknown organization'
+  - JCIP Annotations under Apache License (http://stephenc.github.com/jcip-annotations) com.github.stephenc.jcip:jcip-annotations:jar:1.0-1
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-annotations-api (http://tomcat.apache.org/) org.apache.tomcat:tomcat-annotations-api:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-api (http://tomcat.apache.org/) org.apache.tomcat:tomcat-api:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-catalina (http://tomcat.apache.org/) org.apache.tomcat:tomcat-catalina:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-coyote (http://tomcat.apache.org/) org.apache.tomcat:tomcat-coyote:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-el-api (http://tomcat.apache.org/) org.apache.tomcat:tomcat-el-api:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-jaspic-api (http://tomcat.apache.org/) org.apache.tomcat:tomcat-jaspic-api:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-jni (http://tomcat.apache.org/) org.apache.tomcat:tomcat-jni:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-jsp-api (http://tomcat.apache.org/) org.apache.tomcat:tomcat-jsp-api:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-juli (http://tomcat.apache.org/) org.apache.tomcat:tomcat-juli:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-servlet-api (http://tomcat.apache.org/) org.apache.tomcat:tomcat-servlet-api:jar:9.0.2
+    License: Apache License, Version 2.0 and
+        Common Development And Distribution License (CDDL) Version 1.0  (http://www.apache.org/licenses/LICENSE-2.0.txt and
+        http://www.opensource.org/licenses/cddl1.txt)
+  - tomcat-util (http://tomcat.apache.org/) org.apache.tomcat:tomcat-util:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - tomcat-util-scan (http://tomcat.apache.org/) org.apache.tomcat:tomcat-util-scan:jar:9.0.2
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Bouncy Castle Provider (http://www.bouncycastle.org/java.html) org.bouncycastle:bcprov-jdk15on:jar:1.52
+    License: Bouncy Castle Licence  (http://www.bouncycastle.org/licence.html)
+  - JSON in Java (https://github.com/douglascrockford/JSON-java) org.json:json:jar:20131018
+    License: The JSON License  (http://json.org/license.html)
+  - WSO2 Carbon Orbit - Apache OLTU Library (http://wso2.org) org.wso2.orbit.org.apache.oltu.oauth2:oltu:bundle:1.0.0.wso2v3
+
+
+From: 'Chemouni Uriel' (http://www.minidev.net/)
+  - ASM based accessors helper used by json-smart (http://www.minidev.net/) net.minidev:accessors-smart:bundle:1.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - JSON Small and Fast Parser (http://www.minidev.net/) net.minidev:json-smart:bundle:2.3
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Connect2id Ltd.' (http://connect2id.com)
+  - Nimbus JOSE+JWT (https://bitbucket.org/connect2id/nimbus-jose-jwt) com.nimbusds:nimbus-jose-jwt:jar:5.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Google, Inc.' (http://www.google.com)
+  - Gson (http://code.google.com/p/google-gson/) com.google.code.gson:gson:jar:2.3.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'ObjectWeb' (http://www.objectweb.org/)
+  - ASM Core (http://asm.objectweb.org/asm/) org.ow2.asm:asm:jar:5.0.4
+    License: BSD  (http://asm.objectweb.org/license.html)
+
+From: 'QOS.ch' (http://www.qos.ch)
+  - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:1.6.1
+    License: MIT License  (http://www.opensource.org/licenses/mit-license.php)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Commons Codec (http://commons.apache.org/proper/commons-codec/) commons-codec:commons-codec:jar:1.8
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Lang (http://commons.apache.org/lang/) commons-lang:commons-lang:jar:2.6
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Oltu - OAuth 2.0 - Client (https://oltu.apache.org/org.apache.oltu.oauth2.parent/org.apache.oltu.oauth2.client/) org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:jar:1.0.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache Oltu - OAuth 2.0 - Common (https://oltu.apache.org/org.apache.oltu.oauth2.parent/org.apache.oltu.oauth2.common/) org.apache.oltu.oauth2:org.apache.oltu.oauth2.common:jar:1.0.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'WSO2' (http://www.wso2.org/)
+  - WSO2 Carbon - OIDC SSO Agent (http://www.wso2.com) org.wso2.carbon.identity.agent.sso.java:identity-agent-oidc-sso-agent:jar:1.0.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

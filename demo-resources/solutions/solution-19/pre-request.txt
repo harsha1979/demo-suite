@@ -1,0 +1,10 @@
+We need to enable self sign-up feature in order to try out this solution pattern.
+
+https://docs.wso2.com/display/IS530/Self+Sign+Up+and+Account+Confirmation
+
+
+Email Server Details
+
+wso2identitydemosuite@gmail.com
+Admin_1234
+

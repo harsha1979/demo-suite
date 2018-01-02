@@ -1,0 +1,35 @@
+serviceProvider:
+  name: "Solution-08-SP"
+  description: "Solution-08-SP Desc"
+  inboundAuthenticationConfig:
+    inboundAuthenticationRequestConfigs:
+      -
+        friendlyName: "solution-08-francesca.com"
+        inboundAuthKey: "solution-08-francesca.com"
+        inboundAuthType: "samlsso"
+        inboundConfigType: "standardAPP"
+        properties:
+          -
+            name: "issuer"
+            value: "solution-08-francesca.com"
+          -
+            name: "assertionConsumerUrl"
+            value: "http://localhost:8080/solution-08-francesca.com/samlcallback"
+          -
+            name: "doSignAssertions"
+            value: true
+  localAndOutBoundAuthenticationConfig:
+    isAlwaysSendBackAuthenticatedListOfIdPs: false
+    authenticationType: "flow"
+    isEnableAuthorization: false
+    isUseTenantDomainInLocalSubjectIdentifier: false
+    isUseUserstoreDomainInLocalSubjectIdentifier: false
+    authenticationSteps:
+      -
+        isAttributeStep: true
+        stepOrder: 1
+        isSubjectStep: true
+        localAuthenticatorConfigs:
+          -
+            name: "BasicAuthenticator"
+            displayName: "basic"

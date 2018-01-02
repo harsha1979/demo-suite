@@ -1,0 +1,51 @@
+serviceProvider:
+  name: "Solution-04-SP"
+  description: "Solution-04-SP Desc"
+  inboundAuthenticationConfig:
+    inboundAuthenticationRequestConfigs:
+      -
+        friendlyName: "solution-04-francesca.com"
+        inboundAuthKey: "solution-04-francesca.com"
+        inboundAuthType: "samlsso"
+        inboundConfigType: "standardAPP"
+        properties:
+          -
+            name: "issuer"
+            value: "solution-04-francesca.com"
+          -
+            name: "assertionConsumerUrl"
+            value: "http://localhost:8080/solution-04-francesca.com/samlcallback"
+          -
+            name: "doSignAssertions"
+            value: true
+  localAndOutBoundAuthenticationConfig:
+    isAlwaysSendBackAuthenticatedListOfIdPs: false
+    authenticationType: "flow"
+    isEnableAuthorization: false
+    isUseTenantDomainInLocalSubjectIdentifier: false
+    isUseUserstoreDomainInLocalSubjectIdentifier: false
+    authenticationSteps:
+      -
+        isAttributeStep: true
+        stepOrder: 1
+        isSubjectStep: true
+        federatedIdentityProviders:
+          -
+            identityProviderName: "Google-S4"
+            federatedAuthenticatorConfigs:
+              -
+                name: "GoogleOIDCAuthenticator"
+                displayName: "Google"
+        localAuthenticatorConfigs:
+          -
+            name: "BasicAuthenticator"
+            displayName: "basic"
+  outboundProvisioningConfig:
+    outboundProvisioningConnectors:
+     -
+      identityProviderName: "Salesforce-S4"
+      provisioningConnectorType: "salesforce"
+      jitEnable: true
+      enabled: false
+      blocking: false
+      rulesEnabled: false

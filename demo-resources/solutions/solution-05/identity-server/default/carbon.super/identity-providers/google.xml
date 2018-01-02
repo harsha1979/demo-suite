@@ -1,0 +1,55 @@
+<!--
+  ~
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  ~
+  -->
+
+<ns4:identityProvider xmlns:ns4="http://mgt.idp.carbon.wso2.org">
+    <claimConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <localClaimDialect>true</localClaimDialect>
+        <roleClaimURI>http://wso2.org/claims/role</roleClaimURI>
+    </claimConfig>
+    <ns1:displayName xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Solution-05 Google</ns1:displayName>
+    <ns1:enable xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">true</ns1:enable>
+    <federatedAuthenticatorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <displayName>Google</displayName>
+        <enabled>true</enabled>
+        <name>GoogleOIDCAuthenticator</name>
+        <properties>
+            <name>ClientId</name>
+            <value>816432807205-s0sii84ua9lbv9mkft604btqb8u00hos.apps.googleusercontent.com</value>
+        </properties>
+        <properties>
+            <name>ClientSecret</name>
+            <value>BX9xQTNVu2Y3Y72I7SJZDhar</value>
+        </properties>
+        <properties>
+            <name>callbackUrl</name>
+            <value>https://localhost:9443/commonauth</value>
+        </properties>
+        <properties>
+            <name>AdditionalQueryParameters</name>
+            <value>scope=openid email profile</value>
+        </properties>
+    </federatedAuthenticatorConfigs>
+    <ns1:identityProviderDescription xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Google as an identity provider with enabling JIT provisioning to the local user store (solution-05-google).</ns1:identityProviderDescription>
+    <ns1:identityProviderName xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">solution-05-google</ns1:identityProviderName>
+    <justInTimeProvisioningConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="JustInTimeProvisioningConfig">
+        <provisioningEnabled>true</provisioningEnabled>
+        <provisioningUserStore>solution-05-google</provisioningUserStore>
+    </justInTimeProvisioningConfig>
+</ns4:identityProvider>

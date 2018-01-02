@@ -1,0 +1,19 @@
+serviceProvider:
+  id: 1
+  name: "wso2carbon-local-sp"
+  description: "Local Service Provider"
+  localAndOutBoundAuthenticationConfig:
+    authenticationType: "default"
+  outboundProvisioningConfig:
+    outboundProvisioningConnectors:
+     -
+      identityProviderName: "Salesforce-S4"
+      provisioningConnectorType: "salesforce"
+      jitEnable: true
+      enabled: false
+      blocking: false
+      rulesEnabled: false
+  owner:
+      tenantDomain: "carbon.super"
+      userName: "PRIMARY"
+      userStoreDomain: "wso2.system.user"

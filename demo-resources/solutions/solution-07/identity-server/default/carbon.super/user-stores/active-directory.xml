@@ -1,0 +1,237 @@
+<!--
+  ~
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  ~
+  -->
+
+<ns4:userStoreDTO xmlns:ns4="http://org.apache.axis2/xsd">
+    <ns1:className xmlns:ns1="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">org.wso2.carbon.user.core.ldap.ActiveDirectoryUserStoreManager</ns1:className>
+    <ns1:description xmlns:ns1="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">Active Directory as a user store.</ns1:description>
+    <ns1:domainId xmlns:ns1="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">solution-07-activedirectory</ns1:domainId>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ConnectionURL</name>
+        <value>ldaps://10.100.1.100:636</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ConnectionName</name>
+        <value>CN=admin,CN=Users,DC=WSO2,DC=Com</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ConnectionPassword</name>
+        <value>A1b2c3d4</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserSearchBase</name>
+        <value>CN=Users,DC=WSO2,DC=Com</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserEntryObjectClass</name>
+        <value>user</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameAttribute</name>
+        <value>cn</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameSearchFilter</name>
+        <value>(&amp;(objectClass=user)(cn=?))</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameListFilter</name>
+        <value>(objectClass=user)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserDNPattern</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>DisplayNameAttribute</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>Disabled</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ReadGroups</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>WriteGroups</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GroupSearchBase</name>
+        <value>CN=Users,DC=WSO2,DC=Com</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GroupEntryObjectClass</name>
+        <value>group</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GroupNameAttribute</name>
+        <value>cn</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GroupNameSearchFilter</name>
+        <value>(&amp;(objectClass=group)(cn=?))</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>GroupNameListFilter</name>
+        <value>(objectcategory=group)</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RoleDNPattern</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MembershipAttribute</name>
+        <value>member</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MemberOfAttribute</name>
+        <value>memberOf</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>BackLinksEnabled</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>Referral</name>
+        <value>follow</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameJavaRegEx</name>
+        <value>[a-zA-Z0-9._-|//]{3,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserNameJavaScriptRegEx</name>
+        <value>^[\S]{3,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UsernameJavaRegExViolationErrorMsg</name>
+        <value>Username pattern policy violated.</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordJavaRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordJavaScriptRegEx</name>
+        <value>^[\S]{5,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordJavaRegExViolationErrorMsg</name>
+        <value>Password pattern policy violated.</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RoleNameJavaRegEx</name>
+        <value>[a-zA-Z0-9._-|//]{3,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RoleNameJavaScriptRegEx</name>
+        <value>^[\S]{3,30}$</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UniqueID</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>SCIMEnabled</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>BulkImportSupported</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>EmptyRolesAllowed</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>PasswordHashMethod</name>
+        <value>PLAIN_TEXT</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MultiAttributeSeparator</name>
+        <value>,</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>isADLDSRole</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>userAccountControl</name>
+        <value>512</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MaxUserNameListLength</name>
+        <value>100</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MaxRoleNameListLength</name>
+        <value>100</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>kdcEnabled</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>defaultRealmName</name>
+        <value>WSO2.ORG</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>UserRolesCacheEnabled</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ConnectionPoolingEnabled</name>
+        <value>false</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>LDAPConnectionTimeout</name>
+        <value>5000</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ReadTimeout</name>
+        <value>5000</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>RetryAttempts</name>
+        <value>0</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>CountRetrieverClass</name>
+        <value></value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>java.naming.ldap.attributes.binary</name>
+        <value> </value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>ClaimOperationsSupported</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>transformObjectGUIDToUUID</name>
+        <value>true</value>
+    </properties>
+    <properties xmlns="http://dto.configuration.store.user.identity.carbon.wso2.org/xsd">
+        <name>MembershipAttributeRange</name>
+        <value>1500</value>
+    </properties>
+</ns4:userStoreDTO>

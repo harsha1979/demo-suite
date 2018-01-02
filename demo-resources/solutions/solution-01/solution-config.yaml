@@ -1,0 +1,18 @@
+solutionConfig:
+  executionSteps:
+    -
+      action: "install"
+      path: "identity-server/default/carbon.super/service-providers/*"
+    -
+      action: "install"
+      path: "tomcat/default/webapps/lebens.com"
+    -
+      action: "install"
+      path: "tomcat/default/webapps/francesca.com"
+  deployerDependencies:
+    -
+      deployer: "tomcat/default/webapps/francesca.com"
+      dependency: "identity-server/default/carbon.super/service-providers/sp2_saml.xml"
+    -
+      deployer: "tomcat/default/webapps/lebens.com"
+      dependency: "identity-server/default/carbon.super/service-providers/sp1_oauth.xml"

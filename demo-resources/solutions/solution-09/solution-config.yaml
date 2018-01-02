@@ -1,0 +1,8 @@
+solutionConfig:
+  executionSteps:
+    -
+      action: "install"
+      path: "identity-server/default/carbon.super/user-role/*"
+    -
+      action: "install"
+      path: "identity-server/default/carbon.super/workflow/*"

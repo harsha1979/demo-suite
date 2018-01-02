@@ -1,0 +1,236 @@
+<!--
+  ~
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  ~
+  -->
+
+<ns4:identityProvider xmlns:ns4="http://mgt.idp.carbon.wso2.org">
+    <ns1:alias xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">https://localhost:9443/oauth2/token</ns1:alias>
+    <ns1:certificate xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    <claimConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <claimMappings>
+            <defaultValue>false</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/telephone</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>UserPermissionsCallCenterAutoLogin</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>false</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/country</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>UserPermissionsOfflineUser</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>false</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/mobile</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>UserPermissionsMarketingUser</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>Demo</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/givenname</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>Alias</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>harsha.thirimanna@gmail.com</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/emailaddress</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>Email</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>UTF-8</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/otherphone</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>EmailEncodingKey</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>en_US</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/primaryChallengeQuestion</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>LocaleSidKey</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>en_US</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/dob</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>LanguageLocaleKey</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>00e7F0000021CEp</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/role</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>ProfileId</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>testdefaultuser@wso2.com</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/emailaddress</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>Username</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>WSO2</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/lastname</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>LastName</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <claimMappings>
+            <defaultValue>America/Los_Angeles</defaultValue>
+            <localClaim>
+                <claimUri>http://wso2.org/claims/challengeQuestion1</claimUri>
+            </localClaim>
+            <remoteClaim>
+                <claimUri>TimeZoneSidKey</claimUri>
+            </remoteClaim>
+            <requested>true</requested>
+        </claimMappings>
+        <idpClaims>
+            <claimUri>UserPermissionsCallCenterAutoLogin</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>UserPermissionsMarketingUser</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>UserPermissionsOfflineUser</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>Alias</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>Email</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>EmailEncodingKey</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>LocaleSidKey</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>LanguageLocaleKey</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>ProfileId</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>Username</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>LastName</claimUri>
+        </idpClaims>
+        <idpClaims>
+            <claimUri>TimeZoneSidKey</claimUri>
+        </idpClaims>
+        <localClaimDialect>false</localClaimDialect>
+        <roleClaimURI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+        <userClaimURI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </claimConfig>
+    <ns1:displayName xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Solution-08 Salesforce</ns1:displayName>
+    <ns1:enable xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">true</ns1:enable>
+    <ns1:federationHub xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">false</ns1:federationHub>
+    <ns1:homeRealmId xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    <ns1:identityProviderDescription xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">Outbound provision to the salesforce.</ns1:identityProviderDescription>
+    <ns1:identityProviderName xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd">solution-08-salesforce</ns1:identityProviderName>
+    <justInTimeProvisioningConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="JustInTimeProvisioningConfig">
+        <provisioningEnabled>false</provisioningEnabled>
+        <provisioningUserStore xsi:nil="1"/>
+    </justInTimeProvisioningConfig>
+    <permissionAndRoleConfig xmlns="http://model.common.application.identity.carbon.wso2.org/xsd"/>
+    <provisioningConnectorConfigs xmlns="http://model.common.application.identity.carbon.wso2.org/xsd">
+        <enabled>true</enabled>
+        <name>salesforce</name>
+        <provisioningProperties>
+            <name>sf-username</name>
+            <value>wso2demosuite@wso2.com</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <confidential>true</confidential>
+            <name>sf-password</name>
+            <value>Samitha_2012XIPSw6bqoVQpdB9bkc6SzHw4I</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>sf-clientid</name>
+            <value>3MVG9d8..z.hDcPIgotHn.4NY8e0igXmwXzvrZ8raIHXfhCAdHnvWRpJV9dlGtqmzwxjcwsC2ow==</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <confidential>true</confidential>
+            <name>sf-client-secret</name>
+            <value>4013380608199274322</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>sf-api-version</name>
+            <value>v41.0</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>sf-domain-name</name>
+            <value>https://wso2demosuite-dev-ed.my.salesforce.com</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>sf-token-endpoint</name>
+            <value>https://login.salesforce.com/services/oauth2/token</value>
+        </provisioningProperties>
+        <provisioningProperties>
+            <name>sf-prov-domainName</name>
+            <value>wso2.com</value>
+        </provisioningProperties>
+        <provisioningProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+    </provisioningConnectorConfigs>
+    <ns1:provisioningRole xmlns:ns1="http://model.common.application.identity.carbon.wso2.org/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+</ns4:identityProvider>

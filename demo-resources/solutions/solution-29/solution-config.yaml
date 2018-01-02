@@ -1,0 +1,21 @@
+solutionConfig:
+  executionSteps:
+    -
+      action: "install"
+      path: "identity-server/default/carbon.super/user-stores/*"
+    -
+      action: "install"
+      path: "identity-server/default/carbon.super/user-role/*"
+    -
+      action: "install"
+      path: "identity-server/default/carbon.super/service-providers/*"
+    -
+      action: "install"
+      path: "identity-server/default/carbon.super/xacml-policy/*"
+    -
+      action: "install"
+      path: "tomcat/default/webapps/francesca.com"
+  deployerDependencies:
+    -
+      deployer: "tomcat/default/webapps/francesca.com"
+      dependency: "identity-server/default/carbon.super/service-providers/sp1_saml.xml"

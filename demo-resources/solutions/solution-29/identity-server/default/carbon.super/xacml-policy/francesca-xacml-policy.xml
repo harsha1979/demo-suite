@@ -1,0 +1,73 @@
+<!--
+  ~
+  ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  ~
+  -->
+<xsd:policyDTO xmlns:xsd="http://org.apache.axis2/xsd" xmlns:xsd1="http://dto.entitlement.identity.carbon.wso2.org/xsd">
+    <!--Optional:-->
+    <xsd1:active>true</xsd1:active>
+    <!--Zero or more repetitions:-->
+    <!--Optional:-->
+    <xsd1:lastModifiedTime>true</xsd1:lastModifiedTime>
+    <!--Optional:-->
+    <xsd1:lastModifiedUser>true</xsd1:lastModifiedUser>
+    <!--Optional:-->
+    <xsd1:policy><![CDATA[<Policy xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17" PolicyId="solution-29-francesca-xacml-policy" RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable" Version="1.0">
+   <Description>This template policy provides ability to authorize users to a given service provider(defined by SP_NAME) in the authentication flow based on the user store (USERSTORE_1 or USERSTORE_2). Users who are in the given userstores will be allowed and any other users will be denied.</Description>
+   <Target>
+      <AnyOf>
+         <AllOf>
+            <Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+               <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">authenticate</AttributeValue>
+               <AttributeDesignator AttributeId="http://wso2.org/identity/identity-action/action-name" Category="http://wso2.org/identity/identity-action" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="false"/>
+            </Match>
+            <Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+               <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">solution-29-francesca.com</AttributeValue>
+               <AttributeDesignator AttributeId="http://wso2.org/identity/sp/sp-name" Category="http://wso2.org/identity/sp" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="false"/>
+            </Match>
+         </AllOf>
+      </AnyOf>
+   </Target>
+   <Rule Effect="Permit" RuleId="permit_by_userstores">
+      <Condition>
+         <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:or">
+            <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+               <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-one-and-only">
+                  <AttributeDesignator AttributeId="http://wso2.org/identity/user/user-store-domain" Category="http://wso2.org/identity/user" DataType="http://www.w3.org/2001/XMLSchema#string" MustBePresent="true"/>
+               </Apply>
+               <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">solution-29-marketing</AttributeValue>
+            </Apply>
+         </Apply>
+      </Condition>
+   </Rule>
+   <Rule Effect="Deny" RuleId="deny_others"/>
+</Policy>]]></xsd1:policy>
+    <!--Optional:-->
+    <xsd1:policyEditor>true</xsd1:policyEditor>
+    <!--Zero or more repetitions:-->
+    <xsd1:policyEditorData>true</xsd1:policyEditorData>
+    <!--Optional:-->
+    <xsd1:policyId>solution-29-francesca-xacml-policy</xsd1:policyId>
+    <!--Zero or more repetitions:-->
+    <xsd1:policyOrder>0</xsd1:policyOrder>
+    <!--Zero or more repetitions:-->
+
+    <!--Optional:-->
+    <xsd1:promote>false</xsd1:promote>
+    <!--Optional:-->
+    <xsd1:version>true</xsd1:version>
+</xsd:policyDTO>

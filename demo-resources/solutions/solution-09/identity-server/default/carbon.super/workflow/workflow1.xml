@@ -1,0 +1,93 @@
+<ns6:workflow  xmlns:ns6="http://mgt.workflow.identity.carbon.wso2.org/xsd">
+    <template xmlns="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">
+        <description>The operation should be approved by an authorized person with given role, to complete.</description>
+        <name>Multi-Step User/Role Approval</name>
+        <parametersMetaData>
+            <parameterMetaData xmlns="http://metadata.bean.mgt.workflow.identity.carbon.wso2.org/xsd">
+                <displayName>User and Role</displayName>
+                <inputData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+                <inputType>Multiple_Steps_User_Role</inputType>
+                <isInputDataRequired>false</isInputDataRequired>
+                <isRequired>true</isRequired>
+                <name>UserAndRole</name>
+                <validate>true</validate>
+            </parameterMetaData>
+        </parametersMetaData>
+        <templateId>MultiStepApprovalTemplate</templateId>
+    </template>
+    <templateParameters xmlns="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">
+        <ns1:holder xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">Template</ns1:holder>
+        <ns1:paramName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">UserAndRole</ns1:paramName>
+        <ns1:paramValue xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">demouser</ns1:paramValue>
+        <ns1:qName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">UserAndRole-step-1-roles</ns1:qName>
+    </templateParameters>
+    <templateParameters xmlns="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">
+        <ns1:holder xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">Template</ns1:holder>
+        <ns1:paramName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">UserAndRole</ns1:paramName>
+        <ns1:paramValue xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd"></ns1:paramValue>
+        <ns1:qName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">UserAndRole-step-1-users</ns1:qName>
+    </templateParameters>
+    <ns2:workflowDescription xmlns:ns2="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd"></ns2:workflowDescription>
+    <workflowImpl xmlns="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">
+        <parametersMetaData>
+            <parameterMetaData xmlns="http://metadata.bean.mgt.workflow.identity.carbon.wso2.org/xsd">
+                <displayName>BPS Profile(Server Profile Name)</displayName>
+                <inputData>
+                    <mapType>
+                        <item>
+                            <key>embeded_bps</key>
+                            <value>embeded_bps</value>
+                        </item>
+                    </mapType>
+                </inputData>
+                <inputType>Select</inputType>
+                <isInputDataRequired>true</isInputDataRequired>
+                <isRequired>true</isRequired>
+                <name>BPSProfile</name>
+                <validate>true</validate>
+            </parameterMetaData>
+            <parameterMetaData xmlns="http://metadata.bean.mgt.workflow.identity.carbon.wso2.org/xsd">
+                <dataType>String</dataType>
+                <displayName>Task Subject(Approval task subject to display)</displayName>
+                <inputData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+                <inputType>Text</inputType>
+                <isInputDataRequired>false</isInputDataRequired>
+                <isRequired>true</isRequired>
+                <name>HTSubject</name>
+                <validate>true</validate>
+            </parameterMetaData>
+            <parameterMetaData xmlns="http://metadata.bean.mgt.workflow.identity.carbon.wso2.org/xsd">
+                <dataType>String</dataType>
+                <displayName>Task Detail(Approval task description)</displayName>
+                <inputData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1"/>
+                <inputType>TextArea</inputType>
+                <isInputDataRequired>false</isInputDataRequired>
+                <isRequired>false</isRequired>
+                <name>HTDescription</name>
+                <validate>true</validate>
+            </parameterMetaData>
+        </parametersMetaData>
+        <templateId>MultiStepApprovalTemplate</templateId>
+        <workflowImplId>ApprovalWorkflow</workflowImplId>
+        <workflowImplName>ApprovalWorkflow</workflowImplName>
+    </workflowImpl>
+    <workflowImplParameters xmlns="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">
+        <ns1:holder xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">WorkflowImpl</ns1:holder>
+        <ns1:paramName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">HTDescription</ns1:paramName>
+        <ns1:paramValue xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">solution-09-demo-humantask-desc</ns1:paramValue>
+        <ns1:qName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">HTDescription</ns1:qName>
+    </workflowImplParameters>
+    <workflowImplParameters xmlns="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">
+        <ns1:holder xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">WorkflowImpl</ns1:holder>
+        <ns1:paramName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">HTSubject</ns1:paramName>
+        <ns1:paramValue xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">solution-09-demo-humantask-subject</ns1:paramValue>
+        <ns1:qName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">HTSubject</ns1:qName>
+    </workflowImplParameters>
+    <workflowImplParameters xmlns="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">
+        <ns1:holder xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">WorkflowImpl</ns1:holder>
+        <ns1:paramName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">BPSProfile</ns1:paramName>
+        <ns1:paramValue xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">embeded_bps</ns1:paramValue>
+        <ns1:qName xmlns:ns1="http://bean.mgt.workflow.identity.carbon.wso2.org/xsd">BPSProfile</ns1:qName>
+    </workflowImplParameters>
+    <ns2:workflowName xmlns:ns2="http://dto.mgt.workflow.identity.carbon.wso2.org/xsd">solution-09-workflow</ns2:workflowName>
+</ns6:workflow>
