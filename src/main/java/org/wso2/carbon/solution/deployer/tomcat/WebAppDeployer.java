@@ -51,6 +51,7 @@ import java.util.Properties;
 public class WebAppDeployer {
     private static final String FRANCESCA = "francesca.com";
     private static final String LEBENS = "lebens.com";
+    private static final String LEBENS_LEGAZY = "lebens-legazy.com";
     private static Log log = LogFactory.getLog(WebAppDeployer.class);
 
     private static String TOMCAT_SERVER_PATH = Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator + Constant
@@ -83,8 +84,7 @@ public class WebAppDeployer {
 
 
         try {
-            ZipUtility
-                    .unzip(ApplicationUtility.getCommonWebAppHome() + File.separator + tomcatServerArtifact.getWebApp()
+            ZipUtility.unzip(ApplicationUtility.getCommonWebAppHome() + File.separator + tomcatServerArtifact.getWebApp()
                            + Constant.WAR_EXT, outDir + File.separator + solutionWebApp);
 
             String customSSOPropertyFile = tomcatServerArtifact.getAbsoluteArtifactHomePath() + tomcatServerArtifact
@@ -170,7 +170,7 @@ public class WebAppDeployer {
             if (StringUtils.isNotEmpty(samlProperties.getIdpUrl())) {
                 ssoProperty.setProperty("SAML2.IdPURL", samlProperties.getIdpUrl());
             }
-        } else if (webApp.equals(LEBENS)) {
+        } else if (webApp.equals(LEBENS) || webApp.equals(LEBENS_LEGAZY)) {
             OAuth2Properties oAuth2Properties = OAuth2Properties.getOAuth2Properties(outProperty, spFile);
             if (StringUtils.isNotEmpty(oAuth2Properties.getCallbackUrl())) {
                 ssoProperty.setProperty("OIDC.CallBackUrl", oAuth2Properties.getCallbackUrl());
