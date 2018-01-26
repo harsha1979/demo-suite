@@ -17,7 +17,6 @@
  */
 package org.wso2.carbon.solution.installer;
 
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.solution.CarbonSolutionException;
@@ -50,6 +49,7 @@ public class InstallerFactory {
      * @return
      */
     public static InstallerFactory getInstance() {
+
         return InstallerFactory.installerFactory;
     }
 

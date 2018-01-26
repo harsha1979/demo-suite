@@ -38,6 +38,7 @@ public class AuthenticationStep implements Serializable {
      * No args constructor for use in serialization
      */
     public AuthenticationStep() {
+
     }
 
     /**
@@ -52,6 +53,7 @@ public class AuthenticationStep implements Serializable {
                               boolean isSubjectStep,
                               List<FederatedIdentityProvider> federatedIdentityProviders,
                               List<LocalAuthenticatorConfig> localAuthenticatorConfigs) {
+
         super();
         this.isAttributeStep = isAttributeStep;
         this.stepOrder = stepOrder;
@@ -62,6 +64,7 @@ public class AuthenticationStep implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -76,53 +79,65 @@ public class AuthenticationStep implements Serializable {
     }
 
     public List<FederatedIdentityProvider> getFederatedIdentityProviders() {
+
         return federatedIdentityProviders;
     }
 
     public void setFederatedIdentityProviders(List<FederatedIdentityProvider> federatedIdentityProviders) {
+
         this.federatedIdentityProviders = federatedIdentityProviders;
     }
 
     public List<LocalAuthenticatorConfig> getLocalAuthenticatorConfigs() {
+
         return localAuthenticatorConfigs;
     }
 
     public void setLocalAuthenticatorConfigs(List<LocalAuthenticatorConfig> localAuthenticatorConfigs) {
+
         this.localAuthenticatorConfigs = localAuthenticatorConfigs;
     }
 
     public int getStepOrder() {
+
         return stepOrder;
     }
 
     public void setStepOrder(int stepOrder) {
+
         this.stepOrder = stepOrder;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(localAuthenticatorConfigs).append(federatedIdentityProviders)
                 .append(isSubjectStep).append(stepOrder).append(isAttributeStep).toHashCode();
     }
 
     public boolean isIsAttributeStep() {
+
         return isAttributeStep;
     }
 
     public void setIsAttributeStep(boolean isAttributeStep) {
+
         this.isAttributeStep = isAttributeStep;
     }
 
     public boolean isIsSubjectStep() {
+
         return isSubjectStep;
     }
 
     public void setIsSubjectStep(boolean isSubjectStep) {
+
         this.isSubjectStep = isSubjectStep;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("isAttributeStep", isAttributeStep).append("stepOrder", stepOrder)
                 .append("isSubjectStep", isSubjectStep).append("federatedIdentityProviders", federatedIdentityProviders)
                 .append("localAuthenticatorConfigs", localAuthenticatorConfigs).toString();

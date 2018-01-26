@@ -33,18 +33,21 @@ public class ExecutionOrder implements Serializable {
      * No args constructor for use in serialization
      */
     public ExecutionOrder() {
+
     }
 
     /**
      * @param path
      */
     public ExecutionOrder(String path) {
+
         super();
         this.path = path;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -56,20 +59,24 @@ public class ExecutionOrder implements Serializable {
     }
 
     public String getPath() {
+
         return path;
     }
 
     public void setPath(String path) {
+
         this.path = path;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(path).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("path", path).toString();
     }
 }

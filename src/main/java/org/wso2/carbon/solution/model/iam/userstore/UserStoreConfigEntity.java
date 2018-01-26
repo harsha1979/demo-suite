@@ -32,18 +32,21 @@ public class UserStoreConfigEntity implements Serializable {
      * No args constructor for use in serialization
      */
     public UserStoreConfigEntity() {
+
     }
 
     /**
      * @param userStore
      */
     public UserStoreConfigEntity(UserStore userStore) {
+
         super();
         this.userStore = userStore;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -55,20 +58,24 @@ public class UserStoreConfigEntity implements Serializable {
     }
 
     public UserStore getUserStore() {
+
         return userStore;
     }
 
     public void setUserStore(UserStore userStore) {
+
         this.userStore = userStore;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(userStore).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("userStore", userStore).toString();
     }
 }

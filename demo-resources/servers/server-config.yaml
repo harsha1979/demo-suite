@@ -10,6 +10,8 @@ servers:
       userName: "admin"
       password: "admin"
       scimGroupEndpoint: "/wso2/scim/Groups"
+      tenantAdminUserName: "admin"
+      tenantAdminPassword: "admin"
   -
     serverName: "tomcat"
     instance: "default"

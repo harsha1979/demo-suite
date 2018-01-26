@@ -43,6 +43,7 @@ import java.util.List;
  * OAuth2 application Deployer..
  */
 public class OAuth2ConfigDeployer {
+
     public static final String PROTOCOL_OAUTH2 = "oauth2";
     private static Log log = LogFactory.getLog(OAuth2ConfigDeployer.class);
 
@@ -121,15 +122,19 @@ public class OAuth2ConfigDeployer {
         oAuth2Properties.setTokenEndpoint(identityServer.getHTTPSServerURL() + "/oauth2/token");
         oAuth2Properties.setUserInfoEndpoint(identityServer.getHTTPSServerURL() + "/oauth2/userinfo");
         oAuth2Properties.setSloUrl(identityServer.getHTTPSServerURL() + "/oauth2/logout");
-        oAuth2Properties.setConsumerKey(authConsumerAppDTO_server.getOauthConsumerKey());
-        oAuth2Properties.setConsumerSecret(authConsumerAppDTO_server.getOauthConsumerSecret());
-        oAuth2Properties.setCallbackUrl(authConsumerAppDTO_server.getCallbackUrl());
-
+        if (authConsumerAppDTO_server != null) {
+            oAuth2Properties.setConsumerKey(authConsumerAppDTO_server.getOauthConsumerKey());
+            oAuth2Properties.setConsumerSecret(authConsumerAppDTO_server.getOauthConsumerSecret());
+            oAuth2Properties.setCallbackUrl(authConsumerAppDTO_server.getCallbackUrl());
+        } else {
+            log.error("OAuth Consumer app data not available.");
+        }
         ApplicationUtility.updateProperty(identityServerArtifact, oAuth2Properties.getOauth2Properties());
     }
 
     public static OAuthConsumerAppDTO getOAuthConsumerDTO(String applicationName, Server server)
             throws CarbonSolutionException {
+
         OAuthConsumerAppDTO oAuthConsumerAppDTO = null;
         try {
             OAuthConsumerAppDTO[] allOAuthApplicationData_server = IdentityServerAdminClient
@@ -319,11 +324,12 @@ public class OAuth2ConfigDeployer {
 
     public static IdentityServerArtifact getOAuthArtifactIfExists(IdentityServerArtifact identityServerArtifact)
             throws CarbonSolutionException {
+
         IdentityServerArtifact identityServerArtifactRet = null;
         String artifactFile = identityServerArtifact.getArtifactFile();
         String oauth2ResourceName = artifactFile.replace(".xml", "_oauth.xml");
         String oauth2AbsoluteResourcePath = identityServerArtifact.getAbsoluteArtifactHomePath()
-                                            + File.separator + oauth2ResourceName;
+                + File.separator + oauth2ResourceName;
         if (new File(oauth2AbsoluteResourcePath).exists()) {
             String oauth2ResourcePath = identityServerArtifact.getResourcePath().
                     replace(identityServerArtifact.getArtifactFile(), oauth2ResourceName);

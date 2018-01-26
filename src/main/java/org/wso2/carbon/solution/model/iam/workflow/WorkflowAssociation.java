@@ -34,18 +34,21 @@ public class WorkflowAssociation implements Serializable {
      * No args constructor for use in serialization
      */
     public WorkflowAssociation() {
+
     }
 
     /**
      * @param associations
      */
     public WorkflowAssociation(List<Association> associations) {
+
         super();
         this.associations = associations;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -57,20 +60,24 @@ public class WorkflowAssociation implements Serializable {
     }
 
     public List<Association> getAssociations() {
+
         return associations;
     }
 
     public void setAssociations(List<Association> associations) {
+
         this.associations = associations;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(associations).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("associations", associations).toString();
     }
 }

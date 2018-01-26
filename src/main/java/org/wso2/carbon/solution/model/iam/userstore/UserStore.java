@@ -36,6 +36,7 @@ public class UserStore implements Serializable {
      * No args constructor for use in serialization
      */
     public UserStore() {
+
     }
 
     /**
@@ -44,6 +45,7 @@ public class UserStore implements Serializable {
      * @param dataSourceName
      */
     public UserStore(String userStoreDomain, String dataSourceName, Properties properties) {
+
         super();
         this.userStoreDomain = userStoreDomain;
         this.dataSourceName = dataSourceName;
@@ -52,6 +54,7 @@ public class UserStore implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -65,45 +68,55 @@ public class UserStore implements Serializable {
     }
 
     public String getDataSourceName() {
+
         return dataSourceName;
     }
 
     public void setDataSourceName(String dataSourceName) {
+
         this.dataSourceName = dataSourceName;
     }
 
     public Properties getProperties() {
+
         return properties;
     }
 
     public void setProperties(Properties properties) {
+
         this.properties = properties;
     }
 
     public String getUserStoreDomain() {
+
         return userStoreDomain;
     }
 
     public void setUserStoreDomain(String userStoreDomain) {
+
         this.userStoreDomain = userStoreDomain;
     }
 
     public String getUserStoreType() {
+
         return userStoreType;
     }
 
     public void setUserStoreType(String userStoreType) {
+
         this.userStoreType = userStoreType;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(userStoreDomain).append(userStoreType).append(properties)
                 .append(dataSourceName).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("userStoreDomain", userStoreDomain)
                 .append("dataSourceName", dataSourceName).append("userStoreType", userStoreType)
                 .append("properties", properties).toString();

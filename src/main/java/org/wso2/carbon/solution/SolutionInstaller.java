@@ -34,6 +34,7 @@ import java.util.List;
  * SolutionInstaller initiate the installation of te given artifacts.
  */
 public class SolutionInstaller {
+
     private static Log log = LogFactory.getLog(SolutionInstaller.class);
 
     /**
@@ -43,6 +44,7 @@ public class SolutionInstaller {
      * @throws CarbonSolutionException
      */
     public static void install(List<String> solutionList) throws CarbonSolutionException {
+
         for (String solution : solutionList) {
             log.info("Solution installer : " + solution);
             SolutionConfig solutionConfig = ResourceManager.getSolutionConfig(solution);

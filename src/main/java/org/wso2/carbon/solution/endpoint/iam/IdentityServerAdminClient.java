@@ -17,7 +17,6 @@
  */
 package org.wso2.carbon.solution.endpoint.iam;
 
-
 import org.apache.axis2.client.ServiceClient;
 import org.wso2.carbon.identity.application.mgt.stub.IdentityApplicationManagementServiceStub;
 import org.wso2.carbon.identity.entitlement.stub.EntitlementPolicyAdminServiceStub;
@@ -31,6 +30,7 @@ import org.wso2.carbon.solution.endpoint.iam.config.IdentityServer;
 import org.wso2.carbon.solution.model.server.Server;
 import org.wso2.carbon.solution.util.AuthenticationException;
 import org.wso2.carbon.solution.util.ServiceAuthenticator;
+import org.wso2.carbon.tenant.mgt.stub.TenantMgtAdminServiceStub;
 import org.wso2.carbon.user.mgt.stub.UserAdminStub;
 
 public class IdentityServerAdminClient {
@@ -44,6 +44,7 @@ public class IdentityServerAdminClient {
      */
     public static IdentityApplicationManagementServiceStub getApplicationManagementService(Server server)
             throws CarbonSolutionException {
+
         IdentityApplicationManagementServiceStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -66,6 +67,7 @@ public class IdentityServerAdminClient {
      */
     public static IdentityProviderMgtServiceStub getIdentityProviderMgtService(Server server)
             throws CarbonSolutionException {
+
         IdentityProviderMgtServiceStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -79,6 +81,7 @@ public class IdentityServerAdminClient {
     }
 
     public static OAuthAdminServiceStub getOAuthAdminService(Server server) throws CarbonSolutionException {
+
         OAuthAdminServiceStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -98,6 +101,7 @@ public class IdentityServerAdminClient {
      */
     public static IdentitySAMLSSOConfigServiceStub getSAMLSSOConfigService(Server server)
             throws CarbonSolutionException {
+
         IdentitySAMLSSOConfigServiceStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -112,6 +116,7 @@ public class IdentityServerAdminClient {
 
     public static UserStoreConfigAdminServiceStub getUserStoreConfigAdminService(Server server)
             throws CarbonSolutionException {
+
         UserStoreConfigAdminServiceStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -126,6 +131,7 @@ public class IdentityServerAdminClient {
 
     public static WorkflowAdminServiceStub getWorkflowAdminService(Server server)
             throws CarbonSolutionException {
+
         WorkflowAdminServiceStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -140,6 +146,7 @@ public class IdentityServerAdminClient {
 
     public static UserAdminStub getUserAdminService(Server server)
             throws CarbonSolutionException {
+
         UserAdminStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -154,6 +161,7 @@ public class IdentityServerAdminClient {
 
     public static EntitlementPolicyAdminServiceStub getEntitlementPolicyAdminService(Server server)
             throws CarbonSolutionException {
+
         EntitlementPolicyAdminServiceStub stub = null;
         IdentityServer identityServer = new IdentityServer(server);
         try {
@@ -166,9 +174,24 @@ public class IdentityServerAdminClient {
         return stub;
     }
 
+    public static TenantMgtAdminServiceStub getTenantMgtAdminService(Server server)
+            throws CarbonSolutionException {
+
+        TenantMgtAdminServiceStub stub = null;
+        IdentityServer identityServer = new IdentityServer(server);
+        try {
+            String serviceURL = identityServer.getHTTPSServerURL() + "/services/TenantMgtAdminService";
+            stub = new TenantMgtAdminServiceStub(serviceURL);
+            doServiceAuthenticate(identityServer, stub._getServiceClient());
+        } catch (Exception e) {
+            throw new CarbonSolutionException("Error occurred while getTenantMgtAdminService.", e);
+        }
+        return stub;
+    }
 
     private static void doServiceAuthenticate(IdentityServer identityServer, ServiceClient serviceClient)
             throws AuthenticationException {
+
         ServiceAuthenticator authenticator = ServiceAuthenticator.getInstance();
         authenticator.setAccessPassword(identityServer.getUserName());
         authenticator.setAccessUsername(identityServer.getPassword());

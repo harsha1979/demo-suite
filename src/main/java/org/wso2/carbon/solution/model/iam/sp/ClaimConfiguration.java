@@ -38,6 +38,7 @@ public class ClaimConfiguration implements Serializable {
      * No args constructor for use in serialization
      */
     public ClaimConfiguration() {
+
     }
 
     /**
@@ -52,6 +53,7 @@ public class ClaimConfiguration implements Serializable {
                               String roleClaimURI,
                               String userClaimURI,
                               List<ClaimMapping> claimMappings) {
+
         super();
         this.alwaysSendMappedLocalSubjectId = alwaysSendMappedLocalSubjectId;
         this.localClaimDialect = localClaimDialect;
@@ -62,6 +64,7 @@ public class ClaimConfiguration implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -76,53 +79,65 @@ public class ClaimConfiguration implements Serializable {
     }
 
     public List<ClaimMapping> getClaimMappings() {
+
         return claimMappings;
     }
 
     public void setClaimMappings(List<ClaimMapping> claimMappings) {
+
         this.claimMappings = claimMappings;
     }
 
     public String getRoleClaimURI() {
+
         return roleClaimURI;
     }
 
     public void setRoleClaimURI(String roleClaimURI) {
+
         this.roleClaimURI = roleClaimURI;
     }
 
     public String getUserClaimURI() {
+
         return userClaimURI;
     }
 
     public void setUserClaimURI(String userClaimURI) {
+
         this.userClaimURI = userClaimURI;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(roleClaimURI).append(localClaimDialect)
                 .append(alwaysSendMappedLocalSubjectId).append(userClaimURI).append(claimMappings).toHashCode();
     }
 
     public boolean isAlwaysSendMappedLocalSubjectId() {
+
         return alwaysSendMappedLocalSubjectId;
     }
 
     public void setAlwaysSendMappedLocalSubjectId(boolean alwaysSendMappedLocalSubjectId) {
+
         this.alwaysSendMappedLocalSubjectId = alwaysSendMappedLocalSubjectId;
     }
 
     public boolean isLocalClaimDialect() {
+
         return localClaimDialect;
     }
 
     public void setLocalClaimDialect(boolean localClaimDialect) {
+
         this.localClaimDialect = localClaimDialect;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("alwaysSendMappedLocalSubjectId", alwaysSendMappedLocalSubjectId)
                 .append("localClaimDialect", localClaimDialect).append("roleClaimURI", roleClaimURI)
                 .append("userClaimURI", userClaimURI).append("claimMappings", claimMappings).toString();

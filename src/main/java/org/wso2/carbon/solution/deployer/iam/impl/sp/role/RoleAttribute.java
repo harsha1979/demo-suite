@@ -29,11 +29,11 @@ public class RoleAttribute {
     private static String ROLE_NAME = "role.name";
     private static String PERMISSIONS = "role.permissions";
 
-
     private String roleName;
     private String permissions;
 
     public static List<RoleAttribute> loadroles(Properties properties) {
+
         List<RoleAttribute> roleAttributes = new ArrayList<>();
         int count = 1;
         boolean finish = true;
@@ -54,18 +54,22 @@ public class RoleAttribute {
     }
 
     public String getPermissions() {
+
         return permissions;
     }
 
     public void setPermissions(String permissions) {
+
         this.permissions = permissions;
     }
 
     public String getRoleName() {
+
         return roleName;
     }
 
     public void setRoleName(String roleName) {
+
         this.roleName = roleName;
     }
 }

@@ -33,6 +33,7 @@ import java.io.IOException;
 public abstract class IdentityServerDeployer {
 
     public boolean canHandle(String artifactType) {
+
         if (StringUtils.isNotEmpty(getArtifactType()) && getArtifactType().equals(artifactType)) {
             return true;
         }

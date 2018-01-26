@@ -35,18 +35,21 @@ public class OutboundProvisioningConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public OutboundProvisioningConfig() {
+
     }
 
     /**
      * @param outboundProvisioningConnectors
      */
     public OutboundProvisioningConfig(List<OutboundProvisioningConnector> outboundProvisioningConnectors) {
+
         super();
         this.outboundProvisioningConnectors = outboundProvisioningConnectors;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -59,20 +62,24 @@ public class OutboundProvisioningConfig implements Serializable {
     }
 
     public List<OutboundProvisioningConnector> getOutboundProvisioningConnectors() {
+
         return outboundProvisioningConnectors;
     }
 
     public void setOutboundProvisioningConnectors(List<OutboundProvisioningConnector> outboundProvisioningConnectors) {
+
         this.outboundProvisioningConnectors = outboundProvisioningConnectors;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(outboundProvisioningConnectors).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("outboundProvisioningConnectors", outboundProvisioningConnectors)
                 .toString();
     }

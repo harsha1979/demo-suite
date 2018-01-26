@@ -45,6 +45,7 @@ public class Server implements Serializable {
      * @param serverName
      */
     public Server(String serverName, String instance, Properties properties) {
+
         super();
         this.serverName = serverName;
         this.instance = instance;
@@ -53,6 +54,7 @@ public class Server implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -65,36 +67,44 @@ public class Server implements Serializable {
     }
 
     public String getInstance() {
+
         return instance;
     }
 
     public void setInstance(String instance) {
+
         this.instance = instance;
     }
 
     public Properties getProperties() {
+
         return properties;
     }
 
     public void setProperties(Properties properties) {
+
         this.properties = properties;
     }
 
     public String getServerName() {
+
         return serverName;
     }
 
     public void setServerName(String serverName) {
+
         this.serverName = serverName;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(properties).append(instance).append(serverName).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("serverName", serverName).append("instance", instance)
                 .append("properties", properties).toString();
     }

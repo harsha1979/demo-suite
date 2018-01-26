@@ -34,6 +34,7 @@ public class Owner implements Serializable {
      * No args constructor for use in serialization
      */
     public Owner() {
+
     }
 
     /**
@@ -42,6 +43,7 @@ public class Owner implements Serializable {
      * @param tenantDomain
      */
     public Owner(String tenantDomain, String userName, String userStoreDomain) {
+
         super();
         this.tenantDomain = tenantDomain;
         this.userName = userName;
@@ -50,6 +52,7 @@ public class Owner implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -62,36 +65,44 @@ public class Owner implements Serializable {
     }
 
     public String getTenantDomain() {
+
         return tenantDomain;
     }
 
     public void setTenantDomain(String tenantDomain) {
+
         this.tenantDomain = tenantDomain;
     }
 
     public String getUserName() {
+
         return userName;
     }
 
     public void setUserName(String userName) {
+
         this.userName = userName;
     }
 
     public String getUserStoreDomain() {
+
         return userStoreDomain;
     }
 
     public void setUserStoreDomain(String userStoreDomain) {
+
         this.userStoreDomain = userStoreDomain;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(userStoreDomain).append(userName).append(tenantDomain).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("tenantDomain", tenantDomain).append("userName", userName)
                 .append("userStoreDomain", userStoreDomain).toString();
     }

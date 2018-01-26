@@ -20,7 +20,6 @@
 
 package org.wso2.carbon.solution.deployer.iam.impl;
 
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.solution.CarbonSolutionException;
@@ -37,11 +36,13 @@ import java.util.List;
 import java.util.Properties;
 
 public class UserRoleDeployer extends IdentityServerDeployer {
+
     private static Log log = LogFactory.getLog(UserRoleDeployer.class);
 
     @Override
     protected void doDeploy(IdentityServerArtifact identityServerArtifact, Server server)
             throws CarbonSolutionException {
+
         if (identityServerArtifact.getArtifactFile().equals("role.properties")) {
             Properties properties = new Properties();
             FileInputStream fileInputStream = null;
@@ -121,6 +122,7 @@ public class UserRoleDeployer extends IdentityServerDeployer {
 
     @Override
     protected String getArtifactType() {
+
         return "user-role";
     }
 }

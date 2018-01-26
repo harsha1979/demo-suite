@@ -32,18 +32,21 @@ public class ServiceProviderEntity implements Serializable {
      * No args constructor for use in serialization
      */
     public ServiceProviderEntity() {
+
     }
 
     /**
      * @param serviceProvider
      */
     public ServiceProviderEntity(ServiceProvider serviceProvider) {
+
         super();
         this.serviceProvider = serviceProvider;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -55,20 +58,24 @@ public class ServiceProviderEntity implements Serializable {
     }
 
     public ServiceProvider getServiceProvider() {
+
         return serviceProvider;
     }
 
     public void setServiceProvider(ServiceProvider serviceProvider) {
+
         this.serviceProvider = serviceProvider;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(serviceProvider).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("serviceProvider", serviceProvider).toString();
     }
 }

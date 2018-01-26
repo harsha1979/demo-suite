@@ -1,0 +1,5 @@
+solutionConfig:
+  executionSteps:
+    -
+      action: "install"
+      path: "tomcat/default/webapps/lebens-spa.com"

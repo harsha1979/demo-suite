@@ -36,6 +36,7 @@ public class SolutionConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public SolutionConfig() {
+
     }
 
     /**
@@ -43,6 +44,7 @@ public class SolutionConfig implements Serializable {
      * @param deployerDependencies
      */
     public SolutionConfig(List<ExecutionStep> executionSteps, List<DeployerDependency> deployerDependencies) {
+
         super();
         this.executionSteps = executionSteps;
         this.deployerDependencies = deployerDependencies;
@@ -50,6 +52,7 @@ public class SolutionConfig implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -62,28 +65,34 @@ public class SolutionConfig implements Serializable {
     }
 
     public List<DeployerDependency> getDeployerDependencies() {
+
         return deployerDependencies;
     }
 
     public void setDeployerDependencies(List<DeployerDependency> deployerDependencies) {
+
         this.deployerDependencies = deployerDependencies;
     }
 
     public List<ExecutionStep> getExecutionSteps() {
+
         return executionSteps;
     }
 
     public void setExecutionSteps(List<ExecutionStep> executionSteps) {
+
         this.executionSteps = executionSteps;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(executionSteps).append(deployerDependencies).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("executionSteps", executionSteps)
                 .append("deployerDependencies", deployerDependencies).toString();
     }

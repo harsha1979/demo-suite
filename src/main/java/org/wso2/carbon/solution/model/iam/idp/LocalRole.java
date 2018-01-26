@@ -33,6 +33,7 @@ public class LocalRole implements Serializable {
      * No args constructor for use in serialization
      */
     public LocalRole() {
+
     }
 
     /**
@@ -40,6 +41,7 @@ public class LocalRole implements Serializable {
      * @param userStoreId
      */
     public LocalRole(String localRoleName, String userStoreId) {
+
         super();
         this.localRoleName = localRoleName;
         this.userStoreId = userStoreId;
@@ -47,6 +49,7 @@ public class LocalRole implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -59,28 +62,34 @@ public class LocalRole implements Serializable {
     }
 
     public String getLocalRoleName() {
+
         return localRoleName;
     }
 
     public void setLocalRoleName(String localRoleName) {
+
         this.localRoleName = localRoleName;
     }
 
     public String getUserStoreId() {
+
         return userStoreId;
     }
 
     public void setUserStoreId(String userStoreId) {
+
         this.userStoreId = userStoreId;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(localRoleName).append(userStoreId).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("localRoleName", localRoleName).append("userStoreId", userStoreId)
                 .toString();
     }

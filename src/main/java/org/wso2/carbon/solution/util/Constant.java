@@ -31,29 +31,32 @@ public class Constant {
     public static final String OUT_PROPERTIES = "out.properties";
     public static final String WEB_INF = "WEB-INF";
 
-
     public static class Tenant {
+
         public static final String CARBON_SUPER = "carbon.super";
     }
 
     public static class Solution {
+
         public static final String SOLUTION_EXECUTION_STATUS_INSTALL = "install";
         public static final String SOLUTION_EXECUTION_STATUS_UNINSTALL = "uninstall";
     }
 
-
     public static class ResourcePath {
-        public static String RESOURCE_HOME_PATH = System.getProperty("user.dir") + File.separator +
-                                                  ResourceFolder.RESOURCE_HOME_FOLDER;
+
+        public static final String RESOURCE_HOME_PATH = System.getProperty("user.dir") + File.separator +
+                ResourceFolder.RESOURCE_HOME_FOLDER;
         public static final String SOLUTION_HOME_PATH = RESOURCE_HOME_PATH + File.separator +
-                                                        ResourceFolder.SOLUTION_HOME_FOLDER;
+                ResourceFolder.SOLUTION_HOME_FOLDER;
     }
 
     public static class CommonResource {
+
         public static final String H2_DB = "WSO2CARBON_DB.h2.db";
     }
 
     public static class ResourceFolder {
+
         public static final String RESOURCE_HOME_FOLDER = "demo-resources";
         public static final String SOLUTION_HOME_FOLDER = "solutions";
         public static final String DATABASE_SERVER_FOLDER = "database-server";

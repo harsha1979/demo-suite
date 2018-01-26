@@ -35,6 +35,7 @@ public class ApprovalStep implements Serializable {
      * No args constructor for use in serialization
      */
     public ApprovalStep() {
+
     }
 
     /**
@@ -42,6 +43,7 @@ public class ApprovalStep implements Serializable {
      * @param roles
      */
     public ApprovalStep(List<String> users, List<String> roles) {
+
         super();
         this.users = users;
         this.roles = roles;
@@ -49,6 +51,7 @@ public class ApprovalStep implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -60,28 +63,34 @@ public class ApprovalStep implements Serializable {
     }
 
     public List<String> getRoles() {
+
         return roles;
     }
 
     public void setRoles(List<String> roles) {
+
         this.roles = roles;
     }
 
     public List<String> getUsers() {
+
         return users;
     }
 
     public void setUsers(List<String> users) {
+
         this.users = users;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(users).append(roles).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("users", users).append("roles", roles).toString();
     }
 }

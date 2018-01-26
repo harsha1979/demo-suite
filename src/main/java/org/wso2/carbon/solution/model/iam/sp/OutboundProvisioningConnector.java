@@ -37,6 +37,7 @@ public class OutboundProvisioningConnector implements Serializable {
      * No args constructor for use in serialization
      */
     public OutboundProvisioningConnector() {
+
     }
 
     /**
@@ -53,6 +54,7 @@ public class OutboundProvisioningConnector implements Serializable {
                                          boolean enabled,
                                          boolean blocking,
                                          boolean rulesEnabled) {
+
         super();
         this.identityProviderName = identityProviderName;
         this.provisioningConnectorType = provisioningConnectorType;
@@ -64,6 +66,7 @@ public class OutboundProvisioningConnector implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -78,61 +81,75 @@ public class OutboundProvisioningConnector implements Serializable {
     }
 
     public String getIdentityProviderName() {
+
         return identityProviderName;
     }
 
     public void setIdentityProviderName(String identityProviderName) {
+
         this.identityProviderName = identityProviderName;
     }
 
     public String getProvisioningConnectorType() {
+
         return provisioningConnectorType;
     }
 
     public void setProvisioningConnectorType(String provisioningConnectorType) {
+
         this.provisioningConnectorType = provisioningConnectorType;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(enabled).append(jitEnable).append(blocking).append(identityProviderName)
                 .append(provisioningConnectorType).append(rulesEnabled).toHashCode();
     }
 
     public boolean isBlocking() {
+
         return blocking;
     }
 
     public void setBlocking(boolean blocking) {
+
         this.blocking = blocking;
     }
 
     public boolean isEnabled() {
+
         return enabled;
     }
 
     public void setEnabled(boolean enabled) {
+
         this.enabled = enabled;
     }
 
     public boolean isJitEnable() {
+
         return jitEnable;
     }
 
     public void setJitEnable(boolean jitEnable) {
+
         this.jitEnable = jitEnable;
     }
 
     public boolean isRulesEnabled() {
+
         return rulesEnabled;
     }
 
     public void setRulesEnabled(boolean rulesEnabled) {
+
         this.rulesEnabled = rulesEnabled;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("identityProviderName", identityProviderName)
                 .append("provisioningConnectorType", provisioningConnectorType).append("jitEnable", jitEnable)
                 .append("enabled", enabled).append("blocking", blocking).append("rulesEnabled", rulesEnabled)

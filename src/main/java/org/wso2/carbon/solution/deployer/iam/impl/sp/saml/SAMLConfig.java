@@ -28,7 +28,7 @@ public enum SAMLConfig {
     ISSUER("issuer"),
     ASSERTION_CONSUMER_URL("assertionConsumerUrl"),
     ASSERTION_ENCRYPTION_ALGORITH_URI("assertionEncryptionAlgorithmURI",
-                                      "http://www.w3.org/2001/04/xmlenc#aes256-cbc"),
+            "http://www.w3.org/2001/04/xmlenc#aes256-cbc"),
     ATTRIBUTE_CONSUMING_SERVICE_INDEX("attributeConsumingServiceIndex"),
     CERT_ALIAS("certAlias", "wso2carbon"),
     DEFAULT_ASSERTION_CONSUMER_URL("defaultAssertionConsumerUrl"),
@@ -61,19 +61,23 @@ public enum SAMLConfig {
     private String defaultValue = "";
 
     private SAMLConfig(String configName, String defaultValue) {
+
         this.configName = configName;
         this.defaultValue = defaultValue;
     }
 
     private SAMLConfig(String configName) {
+
         this.configName = configName;
     }
 
     public String getConfigName() {
+
         return configName;
     }
 
     public String getDefaultValue() {
+
         return defaultValue;
     }
 }

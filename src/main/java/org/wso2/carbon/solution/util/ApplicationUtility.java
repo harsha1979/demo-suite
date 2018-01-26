@@ -17,7 +17,6 @@
  */
 package org.wso2.carbon.solution.util;
 
-
 import org.apache.axiom.om.util.Base64;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
@@ -31,6 +30,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -39,14 +39,17 @@ import java.util.Set;
  * Application Utility Class.
  */
 public class ApplicationUtility {
-    public static final List<String> generatedFileList = new ArrayList<>();
+
+    protected static final List<String> generatedFileList = Collections.unmodifiableList(new ArrayList<>());
     private static Log log = LogFactory.getLog(ApplicationUtility.class);
 
     public static void addToCleaningTask(String resource) {
+
         generatedFileList.add(resource);
     }
 
     public static void cleanGeneratedFiles() {
+
         for (String file : generatedFileList) {
             File fileObj = new File(file);
             if (fileObj.exists()) {
@@ -75,6 +78,7 @@ public class ApplicationUtility {
      * @return
      */
     public static String getAbsolutePath(String... resources) {
+
         StringBuilder fullPath = new StringBuilder();
         fullPath.append(Constant.ResourcePath.RESOURCE_HOME_PATH);
         for (String resource : resources) {
@@ -84,27 +88,30 @@ public class ApplicationUtility {
         return fullPath.toString();
     }
 
-
     public static String getSolutionHome() {
+
         return Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator + Constant.ResourceFolder.SOLUTION_HOME_FOLDER;
     }
 
     public static String getCommonWebAppHome() {
+
         return Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator +
-               Constant.ResourceFolder.COMMON_RESOURCE_FOLDER + File.separator
-               + Constant.ResourceFolder.COMMON_RESOURCE_WEBAPPS_FOLDER;
+                Constant.ResourceFolder.COMMON_RESOURCE_FOLDER + File.separator
+                + Constant.ResourceFolder.COMMON_RESOURCE_WEBAPPS_FOLDER;
     }
 
     public static String getCommonDataShemaHome() {
+
         return Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator
-               + Constant.ResourceFolder.COMMON_RESOURCE_FOLDER + File.separator
-               + Constant.ResourceFolder.COMMON_RESOURCE_DATABASE_FOLDER;
+                + Constant.ResourceFolder.COMMON_RESOURCE_FOLDER + File.separator
+                + Constant.ResourceFolder.COMMON_RESOURCE_DATABASE_FOLDER;
     }
 
     public static String getBase64EncodedBasicAuthHeader(String userName, String password)
             throws CarbonSolutionException {
+
         String concatenatedCredential = userName + ":" + password;
-        byte[] byteValue = new byte[0];
+        byte[] byteValue;
         try {
             byteValue = concatenatedCredential.getBytes("UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -116,6 +123,7 @@ public class ApplicationUtility {
     }
 
     public static String getPropertyFilePath(IdentityServerArtifact identityServerArtifact) {
+
         String base = getSolutionHome() + File.separator + identityServerArtifact.getResourcePath();
         if (identityServerArtifact.getArtifactFile() != null) {
             base = base.replace(identityServerArtifact.getArtifactFile(), "");
@@ -126,6 +134,7 @@ public class ApplicationUtility {
 
     public static void updateProperty(IdentityServerArtifact identityServerArtifact,
                                       Properties newProp) throws CarbonSolutionException {
+
         String propertyFilePath1 = getPropertyFilePath(identityServerArtifact);
         Properties prop = new Properties();
 

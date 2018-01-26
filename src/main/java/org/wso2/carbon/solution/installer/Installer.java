@@ -28,6 +28,7 @@ import java.io.File;
  * Installer Abstract class that we can have to based for different installers.
  */
 public abstract class Installer {
+
     private static Log log = LogFactory.getLog(Installer.class);
 
     /**
@@ -38,6 +39,7 @@ public abstract class Installer {
      * @throws CarbonSolutionException
      */
     public boolean canHandle(String path) throws CarbonSolutionException {
+
         String serverName = getServerName(path);
         if (getInstallerName().equals(serverName)) {
             return true;
@@ -60,6 +62,7 @@ public abstract class Installer {
      * @throws CarbonSolutionException
      */
     public void uninstall(String resourcePath) throws CarbonSolutionException {
+
         log.warn("No default implementation found.");
         throw new UnsupportedOperationException("No default implementation found.");
     }
@@ -72,6 +75,7 @@ public abstract class Installer {
      * @throws CarbonSolutionException
      */
     protected String getServerName(String resourcePath) throws CarbonSolutionException {
+
         if (StringUtils.isNotEmpty(resourcePath)) {
             String[] split = resourcePath.split(File.separator);
             if (split != null && split.length > 1) {

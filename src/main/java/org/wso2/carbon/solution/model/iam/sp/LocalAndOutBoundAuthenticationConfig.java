@@ -40,6 +40,7 @@ public class LocalAndOutBoundAuthenticationConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public LocalAndOutBoundAuthenticationConfig() {
+
     }
 
     /**
@@ -58,6 +59,7 @@ public class LocalAndOutBoundAuthenticationConfig implements Serializable {
                                                 boolean isUseTenantDomainInLocalSubjectIdentifier,
                                                 boolean isUseUserstoreDomainInLocalSubjectIdentifier,
                                                 List<AuthenticationStep> authenticationSteps) {
+
         super();
         this.isAlwaysSendBackAuthenticatedListOfIdPs = isAlwaysSendBackAuthenticatedListOfIdPs;
         this.authenticationType = authenticationType;
@@ -70,6 +72,7 @@ public class LocalAndOutBoundAuthenticationConfig implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -88,31 +91,38 @@ public class LocalAndOutBoundAuthenticationConfig implements Serializable {
     }
 
     public List<AuthenticationStep> getAuthenticationSteps() {
+
         return authenticationSteps;
     }
 
     public void setAuthenticationSteps(List<AuthenticationStep> authenticationSteps) {
+
         this.authenticationSteps = authenticationSteps;
     }
 
     public String getAuthenticationType() {
+
         return authenticationType;
     }
 
     public void setAuthenticationType(String authenticationType) {
+
         this.authenticationType = authenticationType;
     }
 
     public String getSubjectClaimUri() {
+
         return subjectClaimUri;
     }
 
     public void setSubjectClaimUri(String subjectClaimUri) {
+
         this.subjectClaimUri = subjectClaimUri;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(authenticationSteps).append(isAlwaysSendBackAuthenticatedListOfIdPs)
                 .append(subjectClaimUri).append(isUseUserstoreDomainInLocalSubjectIdentifier)
                 .append(isEnableAuthorization).append(authenticationType)
@@ -120,39 +130,48 @@ public class LocalAndOutBoundAuthenticationConfig implements Serializable {
     }
 
     public boolean isIsAlwaysSendBackAuthenticatedListOfIdPs() {
+
         return isAlwaysSendBackAuthenticatedListOfIdPs;
     }
 
     public void setIsAlwaysSendBackAuthenticatedListOfIdPs(boolean isAlwaysSendBackAuthenticatedListOfIdPs) {
+
         this.isAlwaysSendBackAuthenticatedListOfIdPs = isAlwaysSendBackAuthenticatedListOfIdPs;
     }
 
     public boolean isIsEnableAuthorization() {
+
         return isEnableAuthorization;
     }
 
     public void setIsEnableAuthorization(boolean isEnableAuthorization) {
+
         this.isEnableAuthorization = isEnableAuthorization;
     }
 
     public boolean isIsUseTenantDomainInLocalSubjectIdentifier() {
+
         return isUseTenantDomainInLocalSubjectIdentifier;
     }
 
     public void setIsUseTenantDomainInLocalSubjectIdentifier(boolean isUseTenantDomainInLocalSubjectIdentifier) {
+
         this.isUseTenantDomainInLocalSubjectIdentifier = isUseTenantDomainInLocalSubjectIdentifier;
     }
 
     public boolean isIsUseUserstoreDomainInLocalSubjectIdentifier() {
+
         return isUseUserstoreDomainInLocalSubjectIdentifier;
     }
 
     public void setIsUseUserstoreDomainInLocalSubjectIdentifier(boolean isUseUserstoreDomainInLocalSubjectIdentifier) {
+
         this.isUseUserstoreDomainInLocalSubjectIdentifier = isUseUserstoreDomainInLocalSubjectIdentifier;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this)
                 .append("isAlwaysSendBackAuthenticatedListOfIdPs", isAlwaysSendBackAuthenticatedListOfIdPs)
                 .append("authenticationType", authenticationType).append("isEnableAuthorization", isEnableAuthorization)

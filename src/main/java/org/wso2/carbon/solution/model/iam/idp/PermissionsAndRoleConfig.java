@@ -36,6 +36,7 @@ public class PermissionsAndRoleConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public PermissionsAndRoleConfig() {
+
     }
 
     /**
@@ -46,6 +47,7 @@ public class PermissionsAndRoleConfig implements Serializable {
     public PermissionsAndRoleConfig(List<String> idpRoles,
                                     List<Permission> permissions,
                                     List<RoleMapping> roleMappings) {
+
         super();
         this.idpRoles = idpRoles;
         this.permissions = permissions;
@@ -54,6 +56,7 @@ public class PermissionsAndRoleConfig implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -66,36 +69,44 @@ public class PermissionsAndRoleConfig implements Serializable {
     }
 
     public List<String> getIdpRoles() {
+
         return idpRoles;
     }
 
     public void setIdpRoles(List<String> idpRoles) {
+
         this.idpRoles = idpRoles;
     }
 
     public List<Permission> getPermissions() {
+
         return permissions;
     }
 
     public void setPermissions(List<Permission> permissions) {
+
         this.permissions = permissions;
     }
 
     public List<RoleMapping> getRoleMappings() {
+
         return roleMappings;
     }
 
     public void setRoleMappings(List<RoleMapping> roleMappings) {
+
         this.roleMappings = roleMappings;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(permissions).append(idpRoles).append(roleMappings).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("idpRoles", idpRoles).append("permissions", permissions)
                 .append("roleMappings", roleMappings).toString();
     }

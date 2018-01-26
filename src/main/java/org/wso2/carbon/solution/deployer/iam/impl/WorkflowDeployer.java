@@ -19,7 +19,6 @@
  */
 package org.wso2.carbon.solution.deployer.iam.impl;
 
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.identity.workflow.mgt.stub.metadata.Association;
@@ -41,16 +40,18 @@ import java.util.Properties;
  * Workflow deployer.
  */
 public class WorkflowDeployer extends IdentityServerDeployer {
+
     private static final String ARTIFACT_TYPE_WORKFLOW_DEF = "workflow";
     private static Log log = LogFactory.getLog(WorkflowDeployer.class);
 
     public IdentityServerArtifact getWorkflowAssociationIfExists(IdentityServerArtifact identityServerArtifact)
             throws CarbonSolutionException {
+
         IdentityServerArtifact identityServerArtifactRet = null;
         String artifactFile = identityServerArtifact.getArtifactFile();
         String wfAssResourceName = artifactFile.replace(".xml", "_association.properties");
         String wfAssAbsoluteResourcePath = identityServerArtifact.getAbsoluteArtifactHomePath()
-                                           + File.separator + wfAssResourceName;
+                + File.separator + wfAssResourceName;
         if (new File(wfAssAbsoluteResourcePath).exists()) {
             String wfAssResourcePath = identityServerArtifact.getResourcePath().
                     replace(identityServerArtifact.getArtifactFile(), wfAssResourceName);
@@ -79,7 +80,7 @@ public class WorkflowDeployer extends IdentityServerDeployer {
                 workflow = getWorkflow(workflow.getWorkflowName(), server);
             } catch (Exception e) {
                 throw new CarbonSolutionException("Error occurred while installing WorkflowWizard, " +
-                                                  identityServerArtifact.getResourcePath());
+                        identityServerArtifact.getResourcePath());
             }
 
             IdentityServerArtifact workflowAssociationIfExists = getWorkflowAssociationIfExists(identityServerArtifact);
@@ -94,8 +95,8 @@ public class WorkflowDeployer extends IdentityServerDeployer {
                     for (WorkflowAssociation workflowAssociation : workflowAssociations) {
                         IdentityServerAdminClient.getWorkflowAdminService(server).
                                 addAssociation(workflowAssociation.getAssociationName(),
-                                               workflowAssociation.getWorkflowId(), workflowAssociation.getEvent(),
-                                               workflowAssociation.getCondition());
+                                        workflowAssociation.getWorkflowId(), workflowAssociation.getEvent(),
+                                        workflowAssociation.getCondition());
                     }
                 } catch (Exception e) {
                     log.error("Error occurred while loading association properties," + e.getMessage(), e);
@@ -114,6 +115,7 @@ public class WorkflowDeployer extends IdentityServerDeployer {
 
     @Override
     protected void cleanAll(Server server) throws CarbonSolutionException {
+
         try {
             Association[] associations = IdentityServerAdminClient.getWorkflowAdminService(server)
                     .listAllAssociations();
@@ -141,6 +143,7 @@ public class WorkflowDeployer extends IdentityServerDeployer {
     }
 
     private WorkflowWizard getWorkflow(String workflowName, Server server) throws CarbonSolutionException {
+
         WorkflowWizard workflowWizard = null;
         try {
             WorkflowWizard[] workflowWizards = IdentityServerAdminClient.getWorkflowAdminService(server)
@@ -161,6 +164,7 @@ public class WorkflowDeployer extends IdentityServerDeployer {
 
     @Override
     protected String getArtifactType() {
+
         return ARTIFACT_TYPE_WORKFLOW_DEF;
     }
 }

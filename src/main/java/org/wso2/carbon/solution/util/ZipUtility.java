@@ -33,6 +33,7 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 public class ZipUtility {
+
     /**
      * Size of the buffer to read/write data
      */
@@ -47,10 +48,14 @@ public class ZipUtility {
      * @param destDirectory
      * @throws IOException
      */
-    public static void unzip(String zipFilePath, String destDirectory) throws IOException {
+    public static void unzip(String zipFilePath, String destDirectory) throws IOException, CarbonSolutionException {
+
         File destDir = new File(destDirectory);
         if (!destDir.exists()) {
-            destDir.mkdir();
+            boolean mkdir = destDir.mkdir();
+            if (!mkdir) {
+                throw new CarbonSolutionException("Error occurred while creating the directory : " + destDirectory);
+            }
         }
         ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFilePath));
         ZipEntry entry = zipIn.getNextEntry();
@@ -63,7 +68,10 @@ public class ZipUtility {
             } else {
                 // if the entry is a directory, make the directory
                 File dir = new File(filePath);
-                dir.mkdir();
+                boolean mkdir = dir.mkdir();
+                if (!mkdir) {
+                    throw new CarbonSolutionException("Error occurred while creating dir, " + filePath);
+                }
             }
             zipIn.closeEntry();
             entry = zipIn.getNextEntry();
@@ -79,6 +87,7 @@ public class ZipUtility {
      * @throws IOException
      */
     private static void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
+
         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
         byte[] bytesIn = new byte[BUFFER_SIZE];
         int read = 0;
@@ -89,6 +98,7 @@ public class ZipUtility {
     }
 
     public static void zipFile(String filePath) throws CarbonSolutionException {
+
         try {
             File file = new File(filePath);
             String zipFileName = file.getName().concat(".zip");

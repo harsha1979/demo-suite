@@ -34,18 +34,21 @@ public class WorkflowApproval implements Serializable {
      * No args constructor for use in serialization
      */
     public WorkflowApproval() {
+
     }
 
     /**
      * @param approvalSteps
      */
     public WorkflowApproval(List<ApprovalStep> approvalSteps) {
+
         super();
         this.approvalSteps = approvalSteps;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -57,20 +60,24 @@ public class WorkflowApproval implements Serializable {
     }
 
     public List<ApprovalStep> getApprovalSteps() {
+
         return approvalSteps;
     }
 
     public void setApprovalSteps(List<ApprovalStep> approvalSteps) {
+
         this.approvalSteps = approvalSteps;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(approvalSteps).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("approvalSteps", approvalSteps).toString();
     }
 }

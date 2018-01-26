@@ -17,7 +17,6 @@
  */
 package org.wso2.carbon.solution.deployer.tomcat;
 
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -49,6 +48,7 @@ import java.util.Properties;
  * Web application deployer.
  */
 public class WebAppDeployer {
+
     private static final String FRANCESCA = "francesca.com";
     private static final String LEBENS = "lebens.com";
     private static final String LEBENS_LEGAZY = "lebens-legazy.com";
@@ -56,7 +56,7 @@ public class WebAppDeployer {
 
     private static String TOMCAT_SERVER_PATH = Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator + Constant
             .ResourceFolder.SERVERS_HOME_FOLDER + File.separator + "tomcat" + File.separator + "apache-tomcat-9.0.1"
-                                               + File.separator + "webapps";
+            + File.separator + "webapps";
 
     /**
      * Tomcat web app deploying.
@@ -68,13 +68,16 @@ public class WebAppDeployer {
     public void deploy(TomcatServerArtifact tomcatServerArtifact, Server server) throws CarbonSolutionException {
 
         //Creating tmp out folder.
-        String outDir = tomcatServerArtifact.getAbsoluteArtifactHomePath() + "out";
-        (new File(outDir)).mkdirs();
-        ApplicationUtility.addToCleaningTask(outDir);
+        String outDirName = tomcatServerArtifact.getAbsoluteArtifactHomePath() + "out";
+        File outDir = new File(outDirName);
+        boolean mkdirs = outDir.mkdirs();
+        if (!mkdirs) {
+            throw new CarbonSolutionException("Error occurred while creating out folder.");
+        }
+        ApplicationUtility.addToCleaningTask(outDirName);
 
         deployWebApp(tomcatServerArtifact, server);
     }
-
 
     private void deployWebApp(TomcatServerArtifact tomcatServerArtifact, Server server)
             throws CarbonSolutionException {
@@ -82,17 +85,16 @@ public class WebAppDeployer {
         String solutionWebApp = tomcatServerArtifact.getSolution() + "-" + tomcatServerArtifact.getWebApp();
         String outDir = tomcatServerArtifact.getAbsoluteArtifactHomePath() + "out";
 
-
         try {
             ZipUtility.unzip(ApplicationUtility.getCommonWebAppHome() + File.separator + tomcatServerArtifact.getWebApp()
-                           + Constant.WAR_EXT, outDir + File.separator + solutionWebApp);
+                    + Constant.WAR_EXT, outDir + File.separator + solutionWebApp);
 
             String customSSOPropertyFile = tomcatServerArtifact.getAbsoluteArtifactHomePath() + tomcatServerArtifact
                     .getWebApp() + File.separator + Constant.SSO_PROPERTIES;
             String ssoPropertyFileAbsolutePath = outDir + File.separator +
-                                                 solutionWebApp + File.separator + Constant.WEB_INF +
-                                                 File.separator + Constant.CLASSES_FOLDER +
-                                                 File.separator + Constant.SSO_PROPERTIES;
+                    solutionWebApp + File.separator + Constant.WEB_INF +
+                    File.separator + Constant.CLASSES_FOLDER +
+                    File.separator + Constant.SSO_PROPERTIES;
             if (new File(customSSOPropertyFile).exists()) {
                 FileUtils.copyFile(new File(customSSOPropertyFile), new File(ssoPropertyFileAbsolutePath));
             }
@@ -104,11 +106,10 @@ public class WebAppDeployer {
                         .equals(tomcatServerArtifact.getResourcePath())) {
                     List<IdentityServerArtifact> identityServerArtifactList = IdentityServerArtifact
                             .load(tomcatServerArtifact.getSolution() + File.separator +
-                                  deployerDependency.getDependency());
+                                    deployerDependency.getDependency());
                     if (identityServerArtifactList != null && identityServerArtifactList.size() == 1) {
                         IdentityServerArtifact identityServerArtifact = identityServerArtifactList.get(0);
                         Properties outProperty = identityServerArtifact.getOutProperty();
-
 
                         Properties ssoProperty = new Properties();
 
@@ -116,6 +117,8 @@ public class WebAppDeployer {
                         try {
                             fileInputStream = new FileInputStream(ssoPropertyFileAbsolutePath);
                             ssoProperty.load(fileInputStream);
+                        } catch (IOException e) {
+                            throw new CarbonSolutionException("Error occurred while loading property file.", e);
                         } finally {
                             try {
                                 if (fileInputStream != null) {
@@ -127,12 +130,14 @@ public class WebAppDeployer {
                         }
 
                         updateSSOProperties(outProperty, ssoProperty, tomcatServerArtifact.getWebApp(),
-                                            identityServerArtifact.getArtifactFile());
+                                identityServerArtifact.getArtifactFile());
 
                         FileOutputStream outInputStream = null;
                         try {
                             outInputStream = new FileOutputStream(ssoPropertyFileAbsolutePath);
                             ssoProperty.store(outInputStream, null);
+                        } catch (IOException e) {
+                            throw new CarbonSolutionException("Error occurred while updating property file.", e);
                         } finally {
                             try {
                                 if (outInputStream != null) {
@@ -142,20 +147,20 @@ public class WebAppDeployer {
                                 log.error("Error occurred while closing the output stream.");
                             }
                         }
-                        ZipDir.zip(outDir + File.separator + solutionWebApp, "war");
-                        deployToFileSystem(outDir + File.separator + solutionWebApp + Constant.WAR_EXT, server);
-                        //deploy(outDir + File.separator + solutionWebApp + Constant.WAR_EXT, server);
                     }
                     break;
                 }
             }
-        } catch (Exception e) {
-            throw new CarbonSolutionException("Error occurred while deployFrancescaWebApp.", e);
+            ZipDir.zip(outDir + File.separator + solutionWebApp, "war");
+            deployToFileSystem(outDir + File.separator + solutionWebApp + Constant.WAR_EXT, server);
+        } catch (IOException e) {
+            throw new CarbonSolutionException("Error occurred while deploying the app.", e);
         }
     }
 
     private void updateSSOProperties(Properties outProperty, Properties ssoProperty, String webApp, String
             spFile) {
+
         if (webApp.equals(FRANCESCA)) {
             SAMLProperties samlProperties = SAMLProperties.getSAMLProperties(outProperty, spFile);
             if (StringUtils.isNotEmpty(samlProperties.getSpEntityId())) {
@@ -181,7 +186,7 @@ public class WebAppDeployer {
                 } else {
                     String replaceURL = ((String) ssoProperty.get("OIDC.AuthorizeEndpoint"))
                             .replace("https://localhost:9443",
-                                     oAuth2Properties.getServerUrl());
+                                    oAuth2Properties.getServerUrl());
                     ssoProperty.setProperty("OIDC.AuthorizeEndpoint", replaceURL);
                 }
             }
@@ -200,8 +205,8 @@ public class WebAppDeployer {
         }
     }
 
-
     private void deployToFileSystem(String file, Server server) throws CarbonSolutionException {
+
         File uploadFile1 = new File(file);
         TomcatServer tomcatServer = new TomcatServer(server);
         String deployPath = tomcatServer.getDeployPath();
@@ -216,7 +221,6 @@ public class WebAppDeployer {
     }
 
     private void deploy(String file, Server server) throws CarbonSolutionException {
-
 
         TomcatServer tomcatServer = new TomcatServer(server);
         String charset = "UTF-8";
@@ -244,6 +248,7 @@ public class WebAppDeployer {
     }
 
     private void unDeploy(String name, Server server) throws CarbonSolutionException {
+
         TomcatServer tomcatServer = new TomcatServer(server);
         String charset = "UTF-8";
         String requestURL = tomcatServer.getHTTPServerURL() + "/manager/html/undeploy?path=/" + name

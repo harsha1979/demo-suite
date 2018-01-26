@@ -32,18 +32,21 @@ public class WorkflowEntity implements Serializable {
      * No args constructor for use in serialization
      */
     public WorkflowEntity() {
+
     }
 
     /**
      * @param workflow
      */
     public WorkflowEntity(Workflow workflow) {
+
         super();
         this.workflow = workflow;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -55,20 +58,24 @@ public class WorkflowEntity implements Serializable {
     }
 
     public Workflow getWorkflow() {
+
         return workflow;
     }
 
     public void setWorkflow(Workflow workflow) {
+
         this.workflow = workflow;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(workflow).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("workflow", workflow).toString();
     }
 }

@@ -39,6 +39,7 @@ public class FederatedAuthenticatorConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public FederatedAuthenticatorConfig() {
+
     }
 
     /**
@@ -55,6 +56,7 @@ public class FederatedAuthenticatorConfig implements Serializable {
                                         boolean isValid,
                                         boolean isDefault,
                                         List<AuthenticatorProperty> authenticatorProperties) {
+
         super();
         this.displayName = displayName;
         this.isEnabled = isEnabled;
@@ -66,6 +68,7 @@ public class FederatedAuthenticatorConfig implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -79,61 +82,75 @@ public class FederatedAuthenticatorConfig implements Serializable {
     }
 
     public List<AuthenticatorProperty> getAuthenticatorProperties() {
+
         return authenticatorProperties;
     }
 
     public void setAuthenticatorProperties(List<AuthenticatorProperty> authenticatorProperties) {
+
         this.authenticatorProperties = authenticatorProperties;
     }
 
     public String getDisplayName() {
+
         return displayName;
     }
 
     public void setDisplayName(String displayName) {
+
         this.displayName = displayName;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(authenticatorProperties).append(isDefault).append(name).append(displayName)
                 .append(isValid).append(isEnabled).toHashCode();
     }
 
     public boolean isIsDefault() {
+
         return isDefault;
     }
 
     public void setIsDefault(boolean isDefault) {
+
         this.isDefault = isDefault;
     }
 
     public boolean isIsEnabled() {
+
         return isEnabled;
     }
 
     public void setIsEnabled(boolean isEnabled) {
+
         this.isEnabled = isEnabled;
     }
 
     public boolean isIsValid() {
+
         return isValid;
     }
 
     public void setIsValid(boolean isValid) {
+
         this.isValid = isValid;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("displayName", displayName).append("isEnabled", isEnabled)
                 .append("name", name).append("isValid", isValid).append("isDefault", isDefault)
                 .append("authenticatorProperties", authenticatorProperties).toString();

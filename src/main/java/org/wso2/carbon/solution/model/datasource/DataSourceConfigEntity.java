@@ -35,18 +35,21 @@ public class DataSourceConfigEntity implements Serializable {
      * No args constructor for use in serialization
      */
     public DataSourceConfigEntity() {
+
     }
 
     /**
      * @param datasources
      */
     public DataSourceConfigEntity(List<Datasource> datasources) {
+
         super();
         this.datasources = datasources;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -58,20 +61,24 @@ public class DataSourceConfigEntity implements Serializable {
     }
 
     public List<Datasource> getDatasources() {
+
         return datasources;
     }
 
     public void setDatasources(List<Datasource> datasources) {
+
         this.datasources = datasources;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(datasources).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("datasources", datasources).toString();
     }
 }

@@ -34,6 +34,7 @@ public class IdpProperty implements Serializable {
      * No args constructor for use in serialization
      */
     public IdpProperty() {
+
     }
 
     /**
@@ -42,6 +43,7 @@ public class IdpProperty implements Serializable {
      * @param displayName
      */
     public IdpProperty(String displayName, String name, String value) {
+
         super();
         this.displayName = displayName;
         this.name = name;
@@ -50,6 +52,7 @@ public class IdpProperty implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -62,36 +65,44 @@ public class IdpProperty implements Serializable {
     }
 
     public String getDisplayName() {
+
         return displayName;
     }
 
     public void setDisplayName(String displayName) {
+
         this.displayName = displayName;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(name).append(value).append(displayName).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("displayName", displayName).append("name", name).append("value", value)
                 .toString();
     }

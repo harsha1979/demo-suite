@@ -27,17 +27,20 @@ import java.util.Arrays;
  * This is the class that we initiate the installation task.
  */
 public class SolutionInstallationApplication {
+
     private static Log log = LogFactory.getLog(SolutionInstallationApplication.class);
 
     public static void main(String[] args) {
+
         log.info("WSO2 Identity Server - Solution Installation Task.");
 
         if (args.length == 0) {
             log.warn("You should pass the solution pattern list. Please follow the demo-suite guide to "
-                     + "know how we should use this script further.");
+                    + "know how we should use this script further.");
         }
         try {
-            SolutionInstaller.install(Arrays.asList(args));
+            //SolutionInstaller.install(Arrays.asList(args));
+            SolutionInstaller.install(Arrays.asList(new String[]{"solution-02"}));
         } catch (Exception e) {
             String errorMessage = "Error occurred while executing the installation process.";
             log.error(errorMessage, e);

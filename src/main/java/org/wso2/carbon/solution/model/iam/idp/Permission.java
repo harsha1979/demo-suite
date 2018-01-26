@@ -32,18 +32,21 @@ public class Permission implements Serializable {
      * No args constructor for use in serialization
      */
     public Permission() {
+
     }
 
     /**
      * @param value
      */
     public Permission(String value) {
+
         super();
         this.value = value;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -55,20 +58,24 @@ public class Permission implements Serializable {
     }
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(value).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("value", value).toString();
     }
 }

@@ -36,6 +36,7 @@ public class FederatedIdentityProvider implements Serializable {
      * No args constructor for use in serialization
      */
     public FederatedIdentityProvider() {
+
     }
 
     /**
@@ -44,6 +45,7 @@ public class FederatedIdentityProvider implements Serializable {
      */
     public FederatedIdentityProvider(String identityProviderName,
                                      List<FederatedAuthenticatorConfig> federatedAuthenticatorConfigs) {
+
         super();
         this.identityProviderName = identityProviderName;
         this.federatedAuthenticatorConfigs = federatedAuthenticatorConfigs;
@@ -51,6 +53,7 @@ public class FederatedIdentityProvider implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -63,28 +66,34 @@ public class FederatedIdentityProvider implements Serializable {
     }
 
     public List<FederatedAuthenticatorConfig> getFederatedAuthenticatorConfigs() {
+
         return federatedAuthenticatorConfigs;
     }
 
     public void setFederatedAuthenticatorConfigs(List<FederatedAuthenticatorConfig> federatedAuthenticatorConfigs) {
+
         this.federatedAuthenticatorConfigs = federatedAuthenticatorConfigs;
     }
 
     public String getIdentityProviderName() {
+
         return identityProviderName;
     }
 
     public void setIdentityProviderName(String identityProviderName) {
+
         this.identityProviderName = identityProviderName;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(identityProviderName).append(federatedAuthenticatorConfigs).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("identityProviderName", identityProviderName)
                 .append("federatedAuthenticatorConfigs", federatedAuthenticatorConfigs).toString();
     }

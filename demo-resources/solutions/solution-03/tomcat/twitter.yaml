@@ -1,4 +1,0 @@
-userStore:
- userStoreDomain: "Twitter-S3"
- userStoreType: "JDBC"
- dataSourceName: "Solution-03-Datasource-02"

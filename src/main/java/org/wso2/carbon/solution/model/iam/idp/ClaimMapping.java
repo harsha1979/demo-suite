@@ -36,6 +36,7 @@ public class ClaimMapping implements Serializable {
      * No args constructor for use in serialization
      */
     public ClaimMapping() {
+
     }
 
     /**
@@ -50,6 +51,7 @@ public class ClaimMapping implements Serializable {
                         boolean isRequested,
                         LocalClaim localClaim,
                         RemoteClaim remoteClaim) {
+
         super();
         this.isMandatory = isMandatory;
         this.defaultValue = defaultValue;
@@ -60,6 +62,7 @@ public class ClaimMapping implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -73,53 +76,65 @@ public class ClaimMapping implements Serializable {
     }
 
     public String getDefaultValue() {
+
         return defaultValue;
     }
 
     public void setDefaultValue(String defaultValue) {
+
         this.defaultValue = defaultValue;
     }
 
     public LocalClaim getLocalClaim() {
+
         return localClaim;
     }
 
     public void setLocalClaim(LocalClaim localClaim) {
+
         this.localClaim = localClaim;
     }
 
     public RemoteClaim getRemoteClaim() {
+
         return remoteClaim;
     }
 
     public void setRemoteClaim(RemoteClaim remoteClaim) {
+
         this.remoteClaim = remoteClaim;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(localClaim).append(remoteClaim).append(isMandatory).append(isRequested)
                 .append(defaultValue).toHashCode();
     }
 
     public boolean isIsMandatory() {
+
         return isMandatory;
     }
 
     public void setIsMandatory(boolean isMandatory) {
+
         this.isMandatory = isMandatory;
     }
 
     public boolean isIsRequested() {
+
         return isRequested;
     }
 
     public void setIsRequested(boolean isRequested) {
+
         this.isRequested = isRequested;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("isMandatory", isMandatory).append("defaultValue", defaultValue)
                 .append("isRequested", isRequested).append("localClaim", localClaim).append("remoteClaim", remoteClaim)
                 .toString();

@@ -33,6 +33,7 @@ public class Association implements Serializable {
      * No args constructor for use in serialization
      */
     public Association() {
+
     }
 
     /**
@@ -40,6 +41,7 @@ public class Association implements Serializable {
      * @param event
      */
     public Association(Object event, Object condition) {
+
         super();
         this.event = event;
         this.condition = condition;
@@ -47,6 +49,7 @@ public class Association implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -58,28 +61,34 @@ public class Association implements Serializable {
     }
 
     public Object getCondition() {
+
         return condition;
     }
 
     public void setCondition(Object condition) {
+
         this.condition = condition;
     }
 
     public Object getEvent() {
+
         return event;
     }
 
     public void setEvent(Object event) {
+
         this.event = event;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(condition).append(event).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("event", event).append("condition", condition).toString();
     }
 }

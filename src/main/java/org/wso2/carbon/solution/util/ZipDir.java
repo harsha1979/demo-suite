@@ -38,16 +38,19 @@ import java.util.zip.ZipOutputStream;
  * @author www.codejava.net
  */
 public class ZipDir extends SimpleFileVisitor<Path> {
+
     private static Log log = LogFactory.getLog(ZipDir.class);
     private static ZipOutputStream zos;
 
     private Path sourceDir;
 
     public ZipDir(Path sourceDir) {
+
         this.sourceDir = sourceDir;
     }
 
     public static void zip(String dirPath, String extension) throws CarbonSolutionException {
+
         Path sourceDir = Paths.get(dirPath);
 
         try {

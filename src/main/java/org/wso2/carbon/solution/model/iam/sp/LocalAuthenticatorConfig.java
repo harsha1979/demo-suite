@@ -33,18 +33,21 @@ public class LocalAuthenticatorConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public LocalAuthenticatorConfig() {
+
     }
 
     /**
      * @param name
      */
     public LocalAuthenticatorConfig(String name) {
+
         super();
         this.name = name;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -56,28 +59,34 @@ public class LocalAuthenticatorConfig implements Serializable {
     }
 
     public String getDisplayName() {
+
         return displayName;
     }
 
     public void setDisplayName(String displayName) {
+
         this.displayName = displayName;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(name).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("name", name).toString();
     }
 }

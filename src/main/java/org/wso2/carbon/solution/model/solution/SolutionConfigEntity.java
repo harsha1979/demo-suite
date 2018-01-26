@@ -33,18 +33,21 @@ public class SolutionConfigEntity implements Serializable {
      * No args constructor for use in serialization
      */
     public SolutionConfigEntity() {
+
     }
 
     /**
      * @param solutionConfig
      */
     public SolutionConfigEntity(SolutionConfig solutionConfig) {
+
         super();
         this.solutionConfig = solutionConfig;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -56,20 +59,24 @@ public class SolutionConfigEntity implements Serializable {
     }
 
     public SolutionConfig getSolutionConfig() {
+
         return solutionConfig;
     }
 
     public void setSolutionConfig(SolutionConfig solutionConfig) {
+
         this.solutionConfig = solutionConfig;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(solutionConfig).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("solutionConfig", solutionConfig).toString();
     }
 }

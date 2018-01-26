@@ -44,6 +44,7 @@ import java.util.List;
  * SAML Config deployer.
  */
 public class SAML2ConfigDeployer {
+
     public static final String PROTOCOL_SAML = "samlsso";
     private static Log log = LogFactory.getLog(SAML2ConfigDeployer.class);
 
@@ -51,6 +52,7 @@ public class SAML2ConfigDeployer {
                               IdentityServerArtifact identityServerArtifact,
                               Server server)
             throws CarbonSolutionException, RemoteException, IdentitySAMLSSOConfigServiceIdentityException {
+
         SAMLSSOServiceProviderDTO samlSSOServiceProviderInfoDTO_server = null;
         InboundAuthenticationConfig inboundAuthenticationConfig = serviceProvider
                 .getInboundAuthenticationConfig();
@@ -88,8 +90,12 @@ public class SAML2ConfigDeployer {
 
         IdentityServer identityServer = new IdentityServer(server);
         SAMLProperties samlProperties = new SAMLProperties(identityServerArtifact.getArtifactFile());
-        samlProperties.setAssertionConsumerUrl(samlSSOServiceProviderInfoDTO_server.getDefaultAssertionConsumerUrl());
-        samlProperties.setSpEntityId(samlSSOServiceProviderInfoDTO_server.getIssuer());
+        if (samlSSOServiceProviderInfoDTO_server != null) {
+            samlProperties.setAssertionConsumerUrl(samlSSOServiceProviderInfoDTO_server.getDefaultAssertionConsumerUrl());
+            samlProperties.setSpEntityId(samlSSOServiceProviderInfoDTO_server.getIssuer());
+        } else {
+            log.error("SAML SSO Service provider data not avaialble.");
+        }
         samlProperties.setIdpEntityId(identityServer.getHost());
         samlProperties.setIdpUrl(identityServer.getHTTPSServerURL() + "/samlsso");
 
@@ -97,6 +103,7 @@ public class SAML2ConfigDeployer {
     }
 
     public static SAMLSSOServiceProviderDTO getSAMLSSOServiceProviderInfoDTO(String issuer, Server server) {
+
         SAMLSSOServiceProviderDTO samlssoServiceProviderDTO = null;
         try {
             SAMLSSOServiceProviderInfoDTO serviceProviders = IdentityServerAdminClient.getSAMLSSOConfigService(server)
@@ -331,11 +338,12 @@ public class SAML2ConfigDeployer {
 
     public static IdentityServerArtifact getSAMLArtifactIfExists(IdentityServerArtifact identityServerArtifact)
             throws CarbonSolutionException {
+
         IdentityServerArtifact identityServerArtifactRet = null;
         String artifactFile = identityServerArtifact.getArtifactFile();
         String oauth2ResourceName = artifactFile.replace(".xml", "_saml.xml");
         String oauth2AbsoluteResourcePath = identityServerArtifact.getAbsoluteArtifactHomePath()
-                                            + File.separator + oauth2ResourceName;
+                + File.separator + oauth2ResourceName;
         if (new File(oauth2AbsoluteResourcePath).exists()) {
             String oauth2ResourcePath = identityServerArtifact.getResourcePath().
                     replace(identityServerArtifact.getArtifactFile(), oauth2ResourceName);

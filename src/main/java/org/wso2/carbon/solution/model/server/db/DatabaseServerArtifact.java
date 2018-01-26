@@ -27,11 +27,11 @@ import java.io.File;
  * Load the meta detail from the path.
  */
 public class DatabaseServerArtifact {
+
     private String resourcePath;
     private String solution;
     private String databaseType;
     private String database;
-
 
     /**
      * Split the resource path and read the values to fill the DatabaseServerArtifact object itself.
@@ -46,6 +46,7 @@ public class DatabaseServerArtifact {
      * @throws CarbonSolutionException
      */
     public static DatabaseServerArtifact load(String resourcePath) throws CarbonSolutionException {
+
         DatabaseServerArtifact databaseServerArtifact = new DatabaseServerArtifact();
         if (StringUtils.isNotEmpty(resourcePath)) {
             String[] split = resourcePath.split(File.separator);
@@ -60,34 +61,42 @@ public class DatabaseServerArtifact {
     }
 
     public String getDatabase() {
+
         return database;
     }
 
     public void setDatabase(String database) {
+
         this.database = database;
     }
 
     public String getDatabaseType() {
+
         return databaseType;
     }
 
     public void setDatabaseType(String databaseType) {
+
         this.databaseType = databaseType;
     }
 
     public String getResourcePath() {
+
         return resourcePath;
     }
 
     public void setResourcePath(String resourcePath) {
+
         this.resourcePath = resourcePath;
     }
 
     public String getSolution() {
+
         return solution;
     }
 
     public void setSolution(String solution) {
+
         this.solution = solution;
     }
 }

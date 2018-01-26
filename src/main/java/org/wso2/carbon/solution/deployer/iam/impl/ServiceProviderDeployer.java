@@ -17,7 +17,6 @@
  */
 package org.wso2.carbon.solution.deployer.iam.impl;
 
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.identity.application.common.model.xsd.ApplicationBasicInfo;
@@ -37,6 +36,7 @@ import org.wso2.carbon.solution.util.ResourceManager;
  * SAML, OAuth2 both has its own deployers.
  */
 public class ServiceProviderDeployer extends IdentityServerDeployer {
+
     private Log log = LogFactory.getLog(ServiceProviderDeployer.class);
 
     @Override
@@ -85,6 +85,7 @@ public class ServiceProviderDeployer extends IdentityServerDeployer {
 
     @Override
     protected void cleanAll(Server server) throws CarbonSolutionException {
+
         try {
             ApplicationBasicInfo[] allApplicationBasicInfo = IdentityServerAdminClient
                     .getApplicationManagementService(server)
@@ -105,6 +106,7 @@ public class ServiceProviderDeployer extends IdentityServerDeployer {
 
     @Override
     protected String getArtifactType() {
+
         return Constant.ResourceFolder.SERVICE_PROVIDERS_FOLDER;
     }
 

@@ -41,6 +41,7 @@ public class ServiceProvider implements Serializable {
      * No args constructor for use in serialization
      */
     public ServiceProvider() {
+
     }
 
     /**
@@ -65,6 +66,7 @@ public class ServiceProvider implements Serializable {
                            LocalAndOutBoundAuthenticationConfig localAndOutBoundAuthenticationConfig,
                            OutboundProvisioningConfig outboundProvisioningConfig,
                            Owner owner) {
+
         super();
         this.id = id;
         this.name = name;
@@ -80,6 +82,7 @@ public class ServiceProvider implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -97,80 +100,99 @@ public class ServiceProvider implements Serializable {
     }
 
     public ClaimConfiguration getClaimConfiguration() {
+
         return claimConfiguration;
     }
 
     public void setClaimConfiguration(ClaimConfiguration claimConfiguration) {
+
         this.claimConfiguration = claimConfiguration;
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public void setDescription(String description) {
+
         this.description = description;
     }
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public InboundAuthenticationConfig getInboundAuthenticationConfig() {
+
         return inboundAuthenticationConfig;
     }
 
     public void setInboundAuthenticationConfig(InboundAuthenticationConfig inboundAuthenticationConfig) {
+
         this.inboundAuthenticationConfig = inboundAuthenticationConfig;
     }
 
     public InboundProvisioningConfig getInboundProvisioningConfig() {
+
         return inboundProvisioningConfig;
     }
 
     public void setInboundProvisioningConfig(InboundProvisioningConfig inboundProvisioningConfig) {
+
         this.inboundProvisioningConfig = inboundProvisioningConfig;
     }
 
     public LocalAndOutBoundAuthenticationConfig getLocalAndOutBoundAuthenticationConfig() {
+
         return localAndOutBoundAuthenticationConfig;
     }
 
     public void setLocalAndOutBoundAuthenticationConfig(LocalAndOutBoundAuthenticationConfig
                                                                 localAndOutBoundAuthenticationConfig) {
+
         this.localAndOutBoundAuthenticationConfig = localAndOutBoundAuthenticationConfig;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public OutboundProvisioningConfig getOutboundProvisioningConfig() {
+
         return outboundProvisioningConfig;
     }
 
     public void setOutboundProvisioningConfig(OutboundProvisioningConfig outboundProvisioningConfig) {
+
         this.outboundProvisioningConfig = outboundProvisioningConfig;
     }
 
     public Owner getOwner() {
+
         return owner;
     }
 
     public void setOwner(Owner owner) {
+
         this.owner = owner;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(id).append(inboundAuthenticationConfig).append(isSaasApp)
                 .append(description).append(outboundProvisioningConfig).append(name).append(owner)
                 .append(localAndOutBoundAuthenticationConfig).append(inboundProvisioningConfig)
@@ -178,15 +200,18 @@ public class ServiceProvider implements Serializable {
     }
 
     public boolean isIsSaasApp() {
+
         return isSaasApp;
     }
 
     public void setIsSaasApp(boolean isSaasApp) {
+
         this.isSaasApp = isSaasApp;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("id", id).append("name", name).append("description", description)
                 .append("isSaasApp", isSaasApp).append("claimConfiguration", claimConfiguration)
                 .append("inboundAuthenticationConfig", inboundAuthenticationConfig)

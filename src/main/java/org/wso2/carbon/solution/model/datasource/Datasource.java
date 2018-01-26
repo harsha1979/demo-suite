@@ -36,6 +36,7 @@ public class Datasource implements Serializable {
      * No args constructor for use in serialization
      */
     public Datasource() {
+
     }
 
     /**
@@ -43,6 +44,7 @@ public class Datasource implements Serializable {
      * @param properties
      */
     public Datasource(String name, Properties properties) {
+
         super();
         this.name = name;
         this.properties = properties;
@@ -50,6 +52,7 @@ public class Datasource implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -61,36 +64,44 @@ public class Datasource implements Serializable {
     }
 
     public String getDatabaseType() {
+
         return databaseType;
     }
 
     public void setDatabaseType(String databaseType) {
+
         this.databaseType = databaseType;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public Properties getProperties() {
+
         return properties;
     }
 
     public void setProperties(Properties properties) {
+
         this.properties = properties;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(name).append(properties).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("name", name).append("properties", properties).toString();
     }
 }

@@ -33,6 +33,7 @@ public class IdpClaim implements Serializable {
      * No args constructor for use in serialization
      */
     public IdpClaim() {
+
     }
 
     /**
@@ -40,6 +41,7 @@ public class IdpClaim implements Serializable {
      * @param claimUri
      */
     public IdpClaim(int claimId, String claimUri) {
+
         super();
         this.claimId = claimId;
         this.claimUri = claimUri;
@@ -47,6 +49,7 @@ public class IdpClaim implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -58,28 +61,34 @@ public class IdpClaim implements Serializable {
     }
 
     public int getClaimId() {
+
         return claimId;
     }
 
     public void setClaimId(int claimId) {
+
         this.claimId = claimId;
     }
 
     public String getClaimUri() {
+
         return claimUri;
     }
 
     public void setClaimUri(String claimUri) {
+
         this.claimUri = claimUri;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(claimId).append(claimUri).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("claimId", claimId).append("claimUri", claimUri).toString();
     }
 }

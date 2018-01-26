@@ -29,9 +29,9 @@ public enum OAuth2Config {
     APPLICATION_NAME("applicationName"),
     CALLBACK_URL("callbackUrl"),
     GRANT_TYPES("grantTypes", "authorization_code implicit password client_credentials refresh_token "
-                              + "urn:ietf:params:oauth:grant-type:saml2-bearer "
-                              + "urn:ietf:params:oauth:grant-type:jwt-bearer "
-                              + "iwa:ntlm"),
+            + "urn:ietf:params:oauth:grant-type:saml2-bearer "
+            + "urn:ietf:params:oauth:grant-type:jwt-bearer "
+            + "iwa:ntlm"),
     OAUTH_CONSUMER_KEY("oauthConsumerKey"),
     OAUTH_CONSUMER_SECRET("oauthConsumerSecret"),
     PKCE_MANDATORY("pkceMandatory", "false"),
@@ -46,19 +46,23 @@ public enum OAuth2Config {
     private String defaultValue = "";
 
     private OAuth2Config(String configName, String defaultValue) {
+
         this.configName = configName;
         this.defaultValue = defaultValue;
     }
 
     private OAuth2Config(String configName) {
+
         this.configName = configName;
     }
 
     public String getConfigName() {
+
         return configName;
     }
 
     public String getDefaultValue() {
+
         return defaultValue;
     }
 }

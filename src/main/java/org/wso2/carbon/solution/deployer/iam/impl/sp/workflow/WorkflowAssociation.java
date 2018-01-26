@@ -20,7 +20,6 @@
 
 package org.wso2.carbon.solution.deployer.iam.impl.sp.workflow;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -36,8 +35,8 @@ public class WorkflowAssociation {
     private String event;
     private String condition;
 
-
     public static List<WorkflowAssociation> loadWorkflowAssociations(String workflowId, Properties properties) {
+
         List<WorkflowAssociation> workflowAssociations = new ArrayList<>();
         int count = 1;
         boolean finish = true;
@@ -61,34 +60,42 @@ public class WorkflowAssociation {
     }
 
     public String getAssociationName() {
+
         return associationName;
     }
 
     public void setAssociationName(String associationName) {
+
         this.associationName = associationName;
     }
 
     public String getCondition() {
+
         return condition;
     }
 
     public void setCondition(String condition) {
+
         this.condition = condition;
     }
 
     public String getEvent() {
+
         return event;
     }
 
     public void setEvent(String event) {
+
         this.event = event;
     }
 
     public String getWorkflowId() {
+
         return workflowId;
     }
 
     public void setWorkflowId(String workflowId) {
+
         this.workflowId = workflowId;
     }
 }

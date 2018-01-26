@@ -28,6 +28,7 @@ public class TomcatInstaller extends Installer {
 
     @Override
     public void install(String path) throws CarbonSolutionException {
+
         WebAppDeployer webAppDeployer = new WebAppDeployer();
         TomcatServerArtifact tomcatServerArtifact = new TomcatServerArtifact(path);
         Server serverConfig = ResourceManager
@@ -37,6 +38,7 @@ public class TomcatInstaller extends Installer {
 
     @Override
     protected String getInstallerName() {
+
         return "tomcat";
     }
 }

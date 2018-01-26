@@ -41,6 +41,7 @@ public class Property implements Serializable {
      * No args constructor for use in serialization
      */
     public Property() {
+
     }
 
     /**
@@ -65,6 +66,7 @@ public class Property implements Serializable {
                     String displayName,
                     int displayOrder,
                     boolean isRequired) {
+
         super();
         this.name = name;
         this.value = value;
@@ -80,6 +82,7 @@ public class Property implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -95,94 +98,116 @@ public class Property implements Serializable {
     }
 
     public String getDefaultValue() {
+
         return defaultValue;
     }
 
     public void setDefaultValue(String defaultValue) {
+
         this.defaultValue = defaultValue;
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public void setDescription(String description) {
+
         this.description = description;
     }
 
     public String getDisplayName() {
+
         return displayName;
     }
 
     public void setDisplayName(String displayName) {
+
         this.displayName = displayName;
     }
 
     public int getDisplayOrder() {
+
         return displayOrder;
     }
 
     public void setDisplayOrder(int displayOrder) {
+
         this.displayOrder = displayOrder;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public String getType() {
+
         return type;
     }
 
     public void setType(String type) {
+
         this.type = type;
     }
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(isRequired).append(description).append(name).append(advanced).append(value)
                 .append(displayOrder).append(displayName).append(defaultValue).append(type).append(confidential)
                 .toHashCode();
     }
 
     public boolean isAdvanced() {
+
         return advanced;
     }
 
     public void setAdvanced(boolean advanced) {
+
         this.advanced = advanced;
     }
 
     public boolean isConfidential() {
+
         return confidential;
     }
 
     public void setConfidential(boolean confidential) {
+
         this.confidential = confidential;
     }
 
     public boolean isIsRequired() {
+
         return isRequired;
     }
 
     public void setIsRequired(boolean isRequired) {
+
         this.isRequired = isRequired;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("name", name).append("value", value).append("type", type)
                 .append("advanced", advanced).append("confidential", confidential).append("defaultValue", defaultValue)
                 .append("description", description).append("displayName", displayName)

@@ -51,6 +51,7 @@ public class IdentityProvider implements Serializable {
      * No args constructor for use in serialization
      */
     public IdentityProvider() {
+
     }
 
     /**
@@ -87,6 +88,7 @@ public class IdentityProvider implements Serializable {
                             JustInTimeProvisioningConfig justInTimeProvisioningConfig,
                             PermissionsAndRoleConfig permissionsAndRoleConfig,
                             List<ProvisioningConnectorConfig> provisioningConnectorConfigs) {
+
         super();
         this.alias = alias;
         this.certificate = certificate;
@@ -108,6 +110,7 @@ public class IdentityProvider implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -129,111 +132,138 @@ public class IdentityProvider implements Serializable {
     }
 
     public String getAlias() {
+
         return alias;
     }
 
     public void setAlias(String alias) {
+
         this.alias = alias;
     }
 
     public String getCertificate() {
+
         return certificate;
     }
 
     public void setCertificate(String certificate) {
+
         this.certificate = certificate;
     }
 
     public ClaimConfig getClaimConfig() {
+
         return claimConfig;
     }
 
     public void setClaimConfig(ClaimConfig claimConfig) {
+
         this.claimConfig = claimConfig;
     }
 
     public String getDisplayName() {
+
         return displayName;
     }
 
     public void setDisplayName(String displayName) {
+
         this.displayName = displayName;
     }
 
     public List<FederatedAuthenticatorConfig> getFederatedAuthenticatorConfigs() {
+
         return federatedAuthenticatorConfigs;
     }
 
     public void setFederatedAuthenticatorConfigs(List<FederatedAuthenticatorConfig> federatedAuthenticatorConfigs) {
+
         this.federatedAuthenticatorConfigs = federatedAuthenticatorConfigs;
     }
 
     public String getHomeRealmId() {
+
         return homeRealmId;
     }
 
     public void setHomeRealmId(String homeRealmId) {
+
         this.homeRealmId = homeRealmId;
     }
 
     public String getIdentityProviderDescription() {
+
         return identityProviderDescription;
     }
 
     public void setIdentityProviderDescription(String identityProviderDescription) {
+
         this.identityProviderDescription = identityProviderDescription;
     }
 
     public String getIdentityProviderName() {
+
         return identityProviderName;
     }
 
     public void setIdentityProviderName(String identityProviderName) {
+
         this.identityProviderName = identityProviderName;
     }
 
     public List<IdpProperty> getIdpProperties() {
+
         return idpProperties;
     }
 
     public void setIdpProperties(List<IdpProperty> idpProperties) {
+
         this.idpProperties = idpProperties;
     }
 
     public JustInTimeProvisioningConfig getJustInTimeProvisioningConfig() {
+
         return justInTimeProvisioningConfig;
     }
 
     public void setJustInTimeProvisioningConfig(JustInTimeProvisioningConfig justInTimeProvisioningConfig) {
+
         this.justInTimeProvisioningConfig = justInTimeProvisioningConfig;
     }
 
     public PermissionsAndRoleConfig getPermissionsAndRoleConfig() {
+
         return permissionsAndRoleConfig;
     }
 
     public void setPermissionsAndRoleConfig(PermissionsAndRoleConfig permissionsAndRoleConfig) {
+
         this.permissionsAndRoleConfig = permissionsAndRoleConfig;
     }
 
     public List<ProvisioningConnectorConfig> getProvisioningConnectorConfigs() {
+
         return provisioningConnectorConfigs;
     }
 
     public void setProvisioningConnectorConfigs(List<ProvisioningConnectorConfig> provisioningConnectorConfigs) {
+
         this.provisioningConnectorConfigs = provisioningConnectorConfigs;
     }
 
     public String getProvisioningRole() {
+
         return provisioningRole;
     }
 
     public void setProvisioningRole(String provisioningRole) {
+
         this.provisioningRole = provisioningRole;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(claimConfig).append(homeRealmId).append(isEnable).append(isPrimary)
                 .append(alias).append(identityProviderName).append(provisioningConnectorConfigs).append(isFederationHub)
                 .append(idpProperties).append(permissionsAndRoleConfig).append(justInTimeProvisioningConfig)
@@ -242,31 +272,38 @@ public class IdentityProvider implements Serializable {
     }
 
     public boolean isIsEnable() {
+
         return isEnable;
     }
 
     public void setIsEnable(boolean isEnable) {
+
         this.isEnable = isEnable;
     }
 
     public boolean isIsFederationHub() {
+
         return isFederationHub;
     }
 
     public void setIsFederationHub(boolean isFederationHub) {
+
         this.isFederationHub = isFederationHub;
     }
 
     public boolean isIsPrimary() {
+
         return isPrimary;
     }
 
     public void setIsPrimary(boolean isPrimary) {
+
         this.isPrimary = isPrimary;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("alias", alias).append("certificate", certificate)
                 .append("displayName", displayName).append("isEnable", isEnable).append("isPrimary", isPrimary)
                 .append("isFederationHub", isFederationHub).append("homeRealmId", homeRealmId)

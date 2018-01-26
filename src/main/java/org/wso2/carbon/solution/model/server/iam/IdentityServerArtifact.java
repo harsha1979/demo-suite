@@ -19,11 +19,14 @@
 package org.wso2.carbon.solution.model.server.iam;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.solution.CarbonSolutionException;
 import org.wso2.carbon.solution.util.Constant;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -33,6 +36,7 @@ import java.util.Properties;
  */
 public class IdentityServerArtifact {
 
+    private static Log log = LogFactory.getLog(IdentityServerArtifact.class);
     private String resourcePath;
     private String solution;
     private String instanceName;
@@ -56,6 +60,7 @@ public class IdentityServerArtifact {
      * @throws CarbonSolutionException
      */
     public static List<IdentityServerArtifact> load(String resourcePath) throws CarbonSolutionException {
+
         List<IdentityServerArtifact> identityServerArtifactList = new ArrayList<>();
 
         if (StringUtils.isNotEmpty(resourcePath)) {
@@ -69,14 +74,16 @@ public class IdentityServerArtifact {
             if (split != null && split.length >= 5) {
                 if (split.length == 5) {
                     String absoluteResourcePath = Constant.ResourcePath.SOLUTION_HOME_PATH + File.separator +
-                                                  resourcePath;
+                            resourcePath;
                     File resourceFolder = new File(absoluteResourcePath);
                     File[] resourceFileList = resourceFolder.listFiles();
-                    for (File resourceFile : resourceFileList) {
-                        if (!resourceFile.getName().equals("out.properties")) {
-                            String fileResourcePath = resourcePath + File.separator + resourceFile.getName();
-                            IdentityServerArtifact identityServerArtifact = loadArtifact(fileResourcePath);
-                            identityServerArtifactList.add(identityServerArtifact);
+                    if (resourceFileList != null) {
+                        for (File resourceFile : resourceFileList) {
+                            if (!resourceFile.getName().equals("out.properties")) {
+                                String fileResourcePath = resourcePath + File.separator + resourceFile.getName();
+                                IdentityServerArtifact identityServerArtifact = loadArtifact(fileResourcePath);
+                                identityServerArtifactList.add(identityServerArtifact);
+                            }
                         }
                     }
                 } else {
@@ -95,6 +102,7 @@ public class IdentityServerArtifact {
      * @return
      */
     private static IdentityServerArtifact loadArtifact(String resourcePath) {
+
         String[] split = resourcePath.split(File.separator);
         IdentityServerArtifact identityServerArtifact = new IdentityServerArtifact();
         identityServerArtifact.setResourcePath(resourcePath);
@@ -107,76 +115,100 @@ public class IdentityServerArtifact {
     }
 
     public String getAbsoluteArtifactHomePath() {
+
         String resourceBasePath = this.getResourcePath().replace(this.getArtifactFile(), "");
         String basePath = Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator +
-                          Constant.ResourceFolder.SOLUTION_HOME_FOLDER + File.separator + resourceBasePath;
+                Constant.ResourceFolder.SOLUTION_HOME_FOLDER + File.separator + resourceBasePath;
         return basePath;
     }
 
     public String getAbsoluteResourcePath() {
+
         String basePath = Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator +
-                          Constant.ResourceFolder.SOLUTION_HOME_FOLDER + File.separator + this.getResourcePath();
+                Constant.ResourceFolder.SOLUTION_HOME_FOLDER + File.separator + this.getResourcePath();
         return basePath;
     }
 
     public String getArtifactFile() {
+
         return artifactFile;
     }
 
     public void setArtifactFile(String artifactFile) {
+
         this.artifactFile = artifactFile;
     }
 
     public String getArtifactType() {
+
         return artifactType;
     }
 
     public void setArtifactType(String artifactType) {
+
         this.artifactType = artifactType;
     }
 
     public String getInstanceName() {
+
         return instanceName;
     }
 
     public void setInstanceName(String instanceName) {
+
         this.instanceName = instanceName;
     }
 
     public Properties getOutProperty() throws CarbonSolutionException {
+
         String outFile = getAbsoluteArtifactHomePath() + File.separator + "out.properties";
         Properties properties = new Properties();
+        FileInputStream fileInputStream = null;
         try {
-            FileInputStream fileInputStream = new FileInputStream(outFile);
+            fileInputStream = new FileInputStream(outFile);
             properties.load(fileInputStream);
         } catch (Exception e) {
-            throw new CarbonSolutionException("Error occurred while loading the out property file, " + e.getMessage()
-                    , e);
+            throw new CarbonSolutionException("Error occurred while loading the out property file, "
+                    + e.getMessage(), e);
+        } finally {
+            if (fileInputStream != null) {
+                try {
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    log.error("Error occurred while closing the stream", e);
+                }
+            }
         }
         return properties;
     }
 
     public String getResourcePath() {
+
         return resourcePath;
     }
 
     public void setResourcePath(String resourcePath) {
+
         this.resourcePath = resourcePath;
     }
 
     public String getSolution() {
+
         return solution;
     }
 
     public void setSolution(String solution) {
+
         this.solution = solution;
     }
 
     public String getTenantDomain() {
+
         return tenantDomain;
     }
 
     public void setTenantDomain(String tenantDomain) {
+
         this.tenantDomain = tenantDomain;
     }
 }

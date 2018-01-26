@@ -38,6 +38,7 @@ public class Workflow implements Serializable {
      * No args constructor for use in serialization
      */
     public Workflow() {
+
     }
 
     /**
@@ -56,6 +57,7 @@ public class Workflow implements Serializable {
                     String taskDescription,
                     WorkflowApproval workflowApproval,
                     WorkflowAssociation workflowAssociation) {
+
         super();
         this.workflowId = workflowId;
         this.name = name;
@@ -68,6 +70,7 @@ public class Workflow implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -82,69 +85,85 @@ public class Workflow implements Serializable {
     }
 
     public String getBpsProfile() {
+
         return bpsProfile;
     }
 
     public void setBpsProfile(String bpsProfile) {
+
         this.bpsProfile = bpsProfile;
     }
 
     public Object getName() {
+
         return name;
     }
 
     public void setName(Object name) {
+
         this.name = name;
     }
 
     public String getTaskDescription() {
+
         return taskDescription;
     }
 
     public void setTaskDescription(String taskDescription) {
+
         this.taskDescription = taskDescription;
     }
 
     public String getTaskSubject() {
+
         return taskSubject;
     }
 
     public void setTaskSubject(String taskSubject) {
+
         this.taskSubject = taskSubject;
     }
 
     public WorkflowApproval getWorkflowApproval() {
+
         return workflowApproval;
     }
 
     public void setWorkflowApproval(WorkflowApproval workflowApproval) {
+
         this.workflowApproval = workflowApproval;
     }
 
     public WorkflowAssociation getWorkflowAssociation() {
+
         return workflowAssociation;
     }
 
     public void setWorkflowAssociation(WorkflowAssociation workflowAssociation) {
+
         this.workflowAssociation = workflowAssociation;
     }
 
     public Object getWorkflowId() {
+
         return workflowId;
     }
 
     public void setWorkflowId(Object workflowId) {
+
         this.workflowId = workflowId;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(workflowId).append(taskSubject).append(name).append(workflowApproval)
                 .append(workflowAssociation).append(bpsProfile).append(taskDescription).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("workflowId", workflowId).append("name", name)
                 .append("bpsProfile", bpsProfile).append("taskSubject", taskSubject)
                 .append("taskDescription", taskDescription).append("workflowApproval", workflowApproval)

@@ -34,6 +34,7 @@ public class ServiceAuthenticator {
     private String accessPassword = null;
 
     private ServiceAuthenticator() {
+
     }
 
     public static ServiceAuthenticator getInstance() {
@@ -56,16 +57,19 @@ public class ServiceAuthenticator {
             auth.setPreemptiveAuthentication(true);
             option.setProperty(org.apache.axis2.transport.http.HTTPConstants.AUTHENTICATE, auth);
             option.setManageSession(true);
+            option.setTimeOutInMilliSeconds(300000);
         } else {
             throw new AuthenticationException("Authentication username or password not set");
         }
     }
 
     public void setAccessPassword(String accessPassword) {
+
         this.accessPassword = accessPassword;
     }
 
     public void setAccessUsername(String accessUsername) {
+
         this.accessUsername = accessUsername;
     }
 }

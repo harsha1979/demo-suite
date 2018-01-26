@@ -35,18 +35,21 @@ public class ServerConfigEntity implements Serializable {
      * No args constructor for use in serialization
      */
     public ServerConfigEntity() {
+
     }
 
     /**
      * @param servers
      */
     public ServerConfigEntity(List<Server> servers) {
+
         super();
         this.servers = servers;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -58,20 +61,24 @@ public class ServerConfigEntity implements Serializable {
     }
 
     public List<Server> getServers() {
+
         return servers;
     }
 
     public void setServers(List<Server> servers) {
+
         this.servers = servers;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(servers).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("servers", servers).toString();
     }
 }

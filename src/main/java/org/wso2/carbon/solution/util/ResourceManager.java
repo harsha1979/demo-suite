@@ -51,6 +51,7 @@ import javax.xml.stream.XMLStreamReader;
  * ResourceManager is load all the resources for known path or given path.
  */
 public class ResourceManager {
+
     private static Log log = LogFactory.getLog(ResourceManager.class);
 
     /**
@@ -81,8 +82,9 @@ public class ResourceManager {
      * @throws CarbonSolutionException
      */
     public static SolutionConfig getSolutionConfig(String solution) throws CarbonSolutionException {
+
         Path resourcePath = Paths.get(Constant.ResourcePath.SOLUTION_HOME_PATH,
-                                      solution, Constant.SOLUTION_CONFIG_FILE);
+                solution, Constant.SOLUTION_CONFIG_FILE);
         SolutionConfigEntity solutionConfigEntity = loadYAMLResource(resourcePath, SolutionConfigEntity.class);
         if (solutionConfigEntity.getSolutionConfig() == null) {
             throw new CarbonSolutionException("SolutionConfig was not loaded, " + resourcePath.toString());
@@ -117,13 +119,12 @@ public class ResourceManager {
             }
         } catch (Exception e) {
             String errorMessage = "Error occurred while loading the resource, " +
-                                  resourcePath + " cause, " + e.getMessage();
+                    resourcePath + " cause, " + e.getMessage();
             log.error(errorMessage);
             throw new CarbonSolutionException(errorMessage, e);
         }
         return resource;
     }
-
 
     /**
      * Load XML String
@@ -135,6 +136,7 @@ public class ResourceManager {
      * @throws CarbonSolutionException
      */
     public static <T> T loadXMLToObject(String resourcePath, Class<T> className) throws CarbonSolutionException {
+
         Path path = Paths.get(resourcePath);
         return loadXMLToObject(path, className);
     }
@@ -149,6 +151,7 @@ public class ResourceManager {
      * @throws CarbonSolutionException
      */
     public static <T> T loadXMLToObject(Path resourcePath, Class<T> className) throws CarbonSolutionException {
+
         T t = null;
         try {
             InputStream inputStream = Files.newInputStream(resourcePath);
@@ -158,13 +161,12 @@ public class ResourceManager {
                     .invoke(null, reader);
         } catch (Exception e) {
             String errorMessage = "Error occurred while loading the resource, " +
-                                  resourcePath + " cause, " + e.getMessage();
+                    resourcePath + " cause, " + e.getMessage();
             log.error(errorMessage);
             throw new CarbonSolutionException(errorMessage, e);
         }
         return t;
     }
-
 
     /**
      * Read ServerConfig for all the solutions.
@@ -175,10 +177,11 @@ public class ResourceManager {
      * @throws CarbonSolutionException
      */
     public static Server getServerConfig(String serverName, String instance) throws CarbonSolutionException {
+
         Path resourcePathObj = Paths
                 .get(Constant.ResourcePath.RESOURCE_HOME_PATH, Constant.ResourceFolder.SERVERS_HOME_FOLDER,
-                     Constant
-                             .SERVER_CONFIG_FILE);
+                        Constant
+                                .SERVER_CONFIG_FILE);
         ServerConfigEntity serverConfigEntity = loadYAMLResource(resourcePathObj, ServerConfigEntity.class);
         List<Server> servers = serverConfigEntity.getServers();
         for (Server server : servers) {
@@ -190,17 +193,18 @@ public class ResourceManager {
         throw new CarbonSolutionException("No default server found for " + serverName);
     }
 
-
     public static List<Datasource> getDataSourceConfig(String solution) throws CarbonSolutionException {
+
         Path resourcePathObj = Paths
                 .get(Constant.ResourcePath.RESOURCE_HOME_PATH, Constant.ResourceFolder.SOLUTION_HOME_FOLDER, solution,
-                     Constant
-                             .DATASOURCE_CONFIG_FILE);
+                        Constant
+                                .DATASOURCE_CONFIG_FILE);
         DataSourceConfigEntity dataSourceConfigEntity = loadYAMLResource(resourcePathObj, DataSourceConfigEntity.class);
         return dataSourceConfigEntity.getDatasources();
     }
 
     public static String getFileContent(String resourcePath) throws CarbonSolutionException {
+
         String content = "";
         try {
             content = IOUtils.toString(new FileInputStream(new File(resourcePath)));
@@ -212,20 +216,24 @@ public class ResourceManager {
 
     public static <T> T loadYAMLResource(String fileName, String resourcePath, Class<T> className)
             throws CarbonSolutionException {
+
         Path resourcePathObj = Paths.get(resourcePath, fileName);
         return loadYAMLResource(resourcePathObj, className);
     }
 
     public static <T> Map<String, T> loadResources(String resourcesPath, Class<T> className)
             throws CarbonSolutionException {
+
         Map<String, T> resourceMap = new HashMap<String, T>();
         Path resourcesPathObj = Paths.get(resourcesPath);
         String[] list = resourcesPathObj.toFile().list();
-        for (String fileName : list) {
-            if (fileName.endsWith("." + Constant.YAML_EXT)) {
-                Path aResourcePath = Paths.get(resourcesPath, fileName);
-                T resource = loadYAMLResource(aResourcePath, className);
-                resourceMap.put(fileName, resource);
+        if (list != null) {
+            for (String fileName : list) {
+                if (fileName.endsWith("." + Constant.YAML_EXT)) {
+                    Path aResourcePath = Paths.get(resourcesPath, fileName);
+                    T resource = loadYAMLResource(aResourcePath, className);
+                    resourceMap.put(fileName, resource);
+                }
             }
         }
         return resourceMap;
@@ -233,31 +241,19 @@ public class ResourceManager {
 
     public static <T> Map<String, T> loadResources(Path resourcesPathObj, Class<T> className)
             throws CarbonSolutionException {
+
         Map<String, T> resourceMap = new HashMap<String, T>();
         String[] list = resourcesPathObj.toFile().list();
-        for (String fileName : list) {
-            if (fileName.endsWith("." + Constant.YAML_EXT)) {
-                Path aResourcePath = Paths.get(resourcesPathObj.toString(), fileName);
-                T resource = loadYAMLResource(aResourcePath, className);
-                resourceMap.put(fileName, resource);
+        if (list != null) {
+            for (String fileName : list) {
+                if (fileName.endsWith("." + Constant.YAML_EXT)) {
+                    Path aResourcePath = Paths.get(resourcesPathObj.toString(), fileName);
+                    T resource = loadYAMLResource(aResourcePath, className);
+                    resourceMap.put(fileName, resource);
+                }
             }
         }
         return resourceMap;
     }
 
-
-    public static void main(String[] args) {
-        try {
-            /*IdentityProvider identityProvider = loadYAMLResource(
-                    "facebook.yaml", "/home/harshat/wso2/demo-suite/project/org.wso2.carbon"
-                                   + ".solution/src/main/resources/samples",
-                    IdentityProvider.class);*/
-            Constant.ResourcePath.RESOURCE_HOME_PATH
-                    = "/home/harshat/wso2/demo-suite/project/org.wso2.carbon.solution/demo-resources";
-            SolutionConfig solutionConfig = getSolutionConfig("solution-02");
-            System.out.println(solutionConfig.toString());
-        } catch (CarbonSolutionException e) {
-
-        }
-    }
 }

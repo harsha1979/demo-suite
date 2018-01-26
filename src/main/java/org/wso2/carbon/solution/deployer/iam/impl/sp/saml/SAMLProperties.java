@@ -20,7 +20,6 @@
 
 package org.wso2.carbon.solution.deployer.iam.impl.sp.saml;
 
-
 import java.util.Properties;
 
 /**
@@ -37,66 +36,81 @@ public class SAMLProperties {
     private String fileName;
 
     public SAMLProperties(String fileName) {
+
         this.fileName = fileName;
         this.samlProperties = new Properties();
     }
 
     private SAMLProperties(Properties samlProperties) {
+
         this.samlProperties = samlProperties;
     }
 
     public static SAMLProperties getSAMLProperties(Properties properties, String fileName) {
+
         SAMLProperties oAuthProperties = new SAMLProperties(properties);
         oAuthProperties.setFileName(fileName);
         return oAuthProperties;
     }
 
     public String getAssertionConsumerUrl() {
+
         return getSAMLPropertyValue(ASSERTION_CONSUMER_URL);
     }
 
     public void setAssertionConsumerUrl(String assertionConsumerUrl) {
+
         this.setSAMLProperty(ASSERTION_CONSUMER_URL, assertionConsumerUrl);
     }
 
     public String getIdpEntityId() {
+
         return getSAMLPropertyValue(IDP_ENTITY_ID);
     }
 
     public void setIdpEntityId(String idpEntityId) {
+
         this.setSAMLProperty(IDP_ENTITY_ID, idpEntityId);
     }
 
     public String getIdpUrl() {
+
         return getSAMLPropertyValue(IDP_URL);
     }
 
     public void setIdpUrl(String idpUrl) {
+
         this.setSAMLProperty(IDP_URL, idpUrl);
     }
 
     public Properties getSamlProperties() {
+
         return samlProperties;
     }
 
     public String getSpEntityId() {
+
         return getSAMLPropertyValue(SP_ENTITY_ID);
     }
 
     public void setSpEntityId(String spEntityId) {
+
         this.setSAMLProperty(SP_ENTITY_ID, spEntityId);
     }
 
     public void setFileName(String fileName) {
+
         this.fileName = fileName;
     }
 
     private String getSAMLPropertyValue(String key) {
+
         String propertyName = PREFIX + "_" + fileName + "_" + key;
         return (String) this.samlProperties.get(propertyName);
     }
 
     private void setSAMLProperty(String key, String value) {
+
         String propertyName = PREFIX + "_" + fileName + "_" + key;
         this.samlProperties.setProperty(propertyName, value);
     }

@@ -37,6 +37,7 @@ public class ExecutionStep implements Serializable {
      * No args constructor for use in serialization
      */
     public ExecutionStep() {
+
     }
 
     /**
@@ -44,6 +45,7 @@ public class ExecutionStep implements Serializable {
      * @param action
      */
     public ExecutionStep(String action, String path) {
+
         super();
         this.action = action;
         this.path = path;
@@ -51,6 +53,7 @@ public class ExecutionStep implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -62,28 +65,34 @@ public class ExecutionStep implements Serializable {
     }
 
     public String getAction() {
+
         return action;
     }
 
     public void setAction(String action) {
+
         this.action = action;
     }
 
     public String getPath() {
+
         return path;
     }
 
     public void setPath(String path) {
+
         this.path = path;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(path).append(action).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("action", action).append("path", path).toString();
     }
 }

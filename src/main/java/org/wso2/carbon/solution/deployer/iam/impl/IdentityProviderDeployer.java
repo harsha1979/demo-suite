@@ -18,7 +18,6 @@
 
 package org.wso2.carbon.solution.deployer.iam.impl;
 
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.identity.application.common.model.idp.xsd.IdentityProvider;
@@ -34,11 +33,13 @@ import org.wso2.carbon.solution.util.ResourceManager;
  * IdentityProviderDeployer is deploying identity server artifacts.
  */
 public class IdentityProviderDeployer extends IdentityServerDeployer {
+
     private Log log = LogFactory.getLog(IdentityProviderDeployer.class);
 
     @Override
     public void doDeploy(IdentityServerArtifact identityServerArtifact, Server server) throws
-                                                                                       CarbonSolutionException {
+            CarbonSolutionException {
+
         IdentityProvider identityProvider = ResourceManager
                 .loadXMLToObject(identityServerArtifact.getAbsoluteResourcePath(), IdentityProvider.class);
 
@@ -69,6 +70,7 @@ public class IdentityProviderDeployer extends IdentityServerDeployer {
 
     @Override
     protected void cleanAll(Server server) throws CarbonSolutionException {
+
         try {
             IdentityProvider[] allIdPs = IdentityServerAdminClient.getIdentityProviderMgtService(server).getAllIdPs();
             for (IdentityProvider idp : allIdPs) {
@@ -86,6 +88,7 @@ public class IdentityProviderDeployer extends IdentityServerDeployer {
 
     @Override
     protected String getArtifactType() {
+
         return Constant.ResourceFolder.IDENTITY_PROVIDERS_FOLDER;
     }
 }

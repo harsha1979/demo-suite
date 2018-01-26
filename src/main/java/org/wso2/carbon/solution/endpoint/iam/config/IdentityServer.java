@@ -17,7 +17,6 @@
  */
 package org.wso2.carbon.solution.endpoint.iam.config;
 
-
 import org.wso2.carbon.solution.model.server.Server;
 
 public class IdentityServer {
@@ -25,10 +24,12 @@ public class IdentityServer {
     private Server server;
 
     public IdentityServer(Server server) {
+
         this.server = server;
     }
 
     public String getHTTPSServerURL() {
+
         String url = "https://" + getHost();
         if (getPort() != 0) {
             url += ":" + getPort();
@@ -37,18 +38,22 @@ public class IdentityServer {
     }
 
     public String getHost() {
+
         return (String) server.getProperties().get("host");
     }
 
     public String getPassword() {
-        return (String) server.getProperties().get("userName");
+
+        return (String) server.getProperties().get("password");
     }
 
     public int getPort() {
+
         return (Integer) server.getProperties().get("port");
     }
 
     public String getScimGroupEndpoint() {
+
         String scimGroupEndpoint = (String) server.getProperties().get("scimGroupEndpoint");
         String httpsServerURL = getHTTPSServerURL();
         if (scimGroupEndpoint.startsWith("/")) {
@@ -60,14 +65,27 @@ public class IdentityServer {
     }
 
     public String getTrustStore() {
+
         return (String) server.getProperties().get("trustStore");
     }
 
     public String getTrustStorePassword() {
+
         return (String) server.getProperties().get("trustStorePassword");
     }
 
     public String getUserName() {
+
         return (String) server.getProperties().get("userName");
+    }
+
+    public String getTenantAdminUserName() {
+
+        return (String) server.getProperties().get("tenantAdminUserName");
+    }
+
+    public String getTenantAdminPassword() {
+
+        return (String) server.getProperties().get("tenantAdminPassword");
     }
 }

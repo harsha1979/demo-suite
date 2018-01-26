@@ -20,7 +20,6 @@
 
 package org.wso2.carbon.solution.deployer.iam.impl;
 
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.identity.entitlement.stub.dto.PolicyDTO;
@@ -32,11 +31,13 @@ import org.wso2.carbon.solution.model.server.iam.IdentityServerArtifact;
 import org.wso2.carbon.solution.util.ResourceManager;
 
 public class XACMLPolicyDeployer extends IdentityServerDeployer {
+
     private static Log log = LogFactory.getLog(XACMLPolicyDeployer.class);
 
     @Override
     protected void doDeploy(IdentityServerArtifact identityServerArtifact, Server server)
             throws CarbonSolutionException {
+
         PolicyDTO policyDTO = ResourceManager.loadXMLToObject(
                 identityServerArtifact.getAbsoluteResourcePath(), PolicyDTO.class);
         String policyId = policyDTO.getPolicyId();
@@ -56,11 +57,11 @@ public class XACMLPolicyDeployer extends IdentityServerDeployer {
             PolicyDTO policy = IdentityServerAdminClient.getEntitlementPolicyAdminService(server)
                     .getPolicy(policyDTO.getPolicyId(), false);
             IdentityServerAdminClient.getEntitlementPolicyAdminService(server).
-                    publishPolicies(new String[] { policy.getPolicyId() },
-                                    new String[] { "PDP Subscriber" }, "CREATE", policy.getVersion(), true, 0);
+                    publishPolicies(new String[]{policy.getPolicyId()},
+                            new String[]{"PDP Subscriber"}, "CREATE", policy.getVersion(), true, 0);
         } catch (Exception e) {
             throw new CarbonSolutionException("Error occurred while installing XACML policies, " +
-                                              identityServerArtifact.getResourcePath());
+                    identityServerArtifact.getResourcePath());
         }
     }
 
@@ -71,6 +72,7 @@ public class XACMLPolicyDeployer extends IdentityServerDeployer {
 
     @Override
     protected String getArtifactType() {
+
         return "xacml-policy";
     }
 }

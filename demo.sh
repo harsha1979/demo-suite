@@ -5,7 +5,7 @@ if [ -z "$JAVA_HOME" ]; then
   exit 1
 fi
 tmppath=$CLASSPATH
-export CLASSPATH=$CLASSPATH:target/org.wso2.carbon.demosuite-1.0.0-jar-with-dependencies.jar
+export CLASSPATH=$CLASSPATH:org.wso2.carbon.demosuite-1.0.0-jar-with-dependencies.jar
 $JAVA_HOME/bin/java org.wso2.carbon.solution.SolutionInstallationApplication $@
 
 

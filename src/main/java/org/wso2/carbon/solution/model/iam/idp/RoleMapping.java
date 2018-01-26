@@ -33,6 +33,7 @@ public class RoleMapping implements Serializable {
      * No args constructor for use in serialization
      */
     public RoleMapping() {
+
     }
 
     /**
@@ -40,6 +41,7 @@ public class RoleMapping implements Serializable {
      * @param remoteRole
      */
     public RoleMapping(LocalRole localRole, String remoteRole) {
+
         super();
         this.localRole = localRole;
         this.remoteRole = remoteRole;
@@ -47,6 +49,7 @@ public class RoleMapping implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -58,28 +61,34 @@ public class RoleMapping implements Serializable {
     }
 
     public LocalRole getLocalRole() {
+
         return localRole;
     }
 
     public void setLocalRole(LocalRole localRole) {
+
         this.localRole = localRole;
     }
 
     public String getRemoteRole() {
+
         return remoteRole;
     }
 
     public void setRemoteRole(String remoteRole) {
+
         this.remoteRole = remoteRole;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(localRole).append(remoteRole).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("localRole", localRole).append("remoteRole", remoteRole).toString();
     }
 }

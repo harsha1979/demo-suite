@@ -38,6 +38,7 @@ public class InboundAuthenticationRequestConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public InboundAuthenticationRequestConfig() {
+
     }
 
     /**
@@ -52,6 +53,7 @@ public class InboundAuthenticationRequestConfig implements Serializable {
                                               String inboundAuthType,
                                               String inboundConfigType,
                                               List<Property> properties) {
+
         super();
         this.friendlyName = friendlyName;
         this.inboundAuthKey = inboundAuthKey;
@@ -62,6 +64,7 @@ public class InboundAuthenticationRequestConfig implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -75,53 +78,65 @@ public class InboundAuthenticationRequestConfig implements Serializable {
     }
 
     public String getFriendlyName() {
+
         return friendlyName;
     }
 
     public void setFriendlyName(String friendlyName) {
+
         this.friendlyName = friendlyName;
     }
 
     public String getInboundAuthKey() {
+
         return inboundAuthKey;
     }
 
     public void setInboundAuthKey(String inboundAuthKey) {
+
         this.inboundAuthKey = inboundAuthKey;
     }
 
     public String getInboundAuthType() {
+
         return inboundAuthType;
     }
 
     public void setInboundAuthType(String inboundAuthType) {
+
         this.inboundAuthType = inboundAuthType;
     }
 
     public String getInboundConfigType() {
+
         return inboundConfigType;
     }
 
     public void setInboundConfigType(String inboundConfigType) {
+
         this.inboundConfigType = inboundConfigType;
     }
 
     public List<Property> getProperties() {
+
         return properties;
     }
 
     public void setProperties(List<Property> properties) {
+
         this.properties = properties;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(inboundConfigType).append(inboundAuthType).append(friendlyName)
                 .append(properties).append(inboundAuthKey).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("friendlyName", friendlyName).append("inboundAuthKey", inboundAuthKey)
                 .append("inboundAuthType", inboundAuthType).append("inboundConfigType", inboundConfigType)
                 .append("properties", properties).toString();

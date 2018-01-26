@@ -40,6 +40,7 @@ public class ProvisioningConnectorConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public ProvisioningConnectorConfig() {
+
     }
 
     /**
@@ -58,6 +59,7 @@ public class ProvisioningConnectorConfig implements Serializable {
                                        boolean isValid,
                                        boolean isDefault,
                                        List<ProvisioningProperty> provisioningProperties) {
+
         super();
         this.isBlocking = isBlocking;
         this.isEnabled = isEnabled;
@@ -70,6 +72,7 @@ public class ProvisioningConnectorConfig implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -84,69 +87,85 @@ public class ProvisioningConnectorConfig implements Serializable {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public List<ProvisioningProperty> getProvisioningProperties() {
+
         return provisioningProperties;
     }
 
     public void setProvisioningProperties(List<ProvisioningProperty> provisioningProperties) {
+
         this.provisioningProperties = provisioningProperties;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(provisioningProperties).append(isDefault).append(name).append(isBlocking)
                 .append(isValid).append(isRulesEnabled).append(isEnabled).toHashCode();
     }
 
     public boolean isIsBlocking() {
+
         return isBlocking;
     }
 
     public void setIsBlocking(boolean isBlocking) {
+
         this.isBlocking = isBlocking;
     }
 
     public boolean isIsDefault() {
+
         return isDefault;
     }
 
     public void setIsDefault(boolean isDefault) {
+
         this.isDefault = isDefault;
     }
 
     public boolean isIsEnabled() {
+
         return isEnabled;
     }
 
     public void setIsEnabled(boolean isEnabled) {
+
         this.isEnabled = isEnabled;
     }
 
     public boolean isIsRulesEnabled() {
+
         return isRulesEnabled;
     }
 
     public void setIsRulesEnabled(boolean isRulesEnabled) {
+
         this.isRulesEnabled = isRulesEnabled;
     }
 
     public boolean isIsValid() {
+
         return isValid;
     }
 
     public void setIsValid(boolean isValid) {
+
         this.isValid = isValid;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("isBlocking", isBlocking).append("isEnabled", isEnabled)
                 .append("name", name).append("isRulesEnabled", isRulesEnabled).append("isValid", isValid)
                 .append("isDefault", isDefault).append("provisioningProperties", provisioningProperties).toString();

@@ -27,12 +27,14 @@ import java.io.File;
  * TODO: Add class comment
  */
 public class TomcatServerArtifact {
+
     private String path;
     private String solution;
     private String instanceName;
     private String webApp;
 
     public TomcatServerArtifact(String path) throws CarbonSolutionException {
+
         this.path = path;
         String[] split = path.split(File.separator);
         if (split != null) {
@@ -49,25 +51,30 @@ public class TomcatServerArtifact {
     }
 
     public String getAbsoluteArtifactHomePath() {
+
         String resourceBasePath = this.getResourcePath().replace(this.getWebApp(), "");
         String basePath = Constant.ResourcePath.RESOURCE_HOME_PATH + File.separator +
-                          Constant.ResourceFolder.SOLUTION_HOME_FOLDER + File.separator + resourceBasePath;
+                Constant.ResourceFolder.SOLUTION_HOME_FOLDER + File.separator + resourceBasePath;
         return basePath;
     }
 
     public String getInstanceName() {
+
         return instanceName;
     }
 
     public String getResourcePath() {
+
         return path;
     }
 
     public String getSolution() {
+
         return solution;
     }
 
     public String getWebApp() {
+
         return webApp;
     }
 }

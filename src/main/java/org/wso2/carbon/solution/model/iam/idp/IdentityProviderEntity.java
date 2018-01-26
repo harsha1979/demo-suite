@@ -32,18 +32,21 @@ public class IdentityProviderEntity implements Serializable {
      * No args constructor for use in serialization
      */
     public IdentityProviderEntity() {
+
     }
 
     /**
      * @param identityProvider
      */
     public IdentityProviderEntity(IdentityProvider identityProvider) {
+
         super();
         this.identityProvider = identityProvider;
     }
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -55,20 +58,24 @@ public class IdentityProviderEntity implements Serializable {
     }
 
     public IdentityProvider getIdentityProvider() {
+
         return identityProvider;
     }
 
     public void setIdentityProvider(IdentityProvider identityProvider) {
+
         this.identityProvider = identityProvider;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(identityProvider).toHashCode();
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("identityProvider", identityProvider).toString();
     }
 }

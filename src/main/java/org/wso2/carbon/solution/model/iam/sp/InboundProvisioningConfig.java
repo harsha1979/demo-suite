@@ -34,6 +34,7 @@ public class InboundProvisioningConfig implements Serializable {
      * No args constructor for use in serialization
      */
     public InboundProvisioningConfig() {
+
     }
 
     /**
@@ -42,6 +43,7 @@ public class InboundProvisioningConfig implements Serializable {
      * @param isDumbMode
      */
     public InboundProvisioningConfig(boolean isDumbMode, boolean isProvisioningEnabled, String provisioningUserStore) {
+
         super();
         this.isDumbMode = isDumbMode;
         this.isProvisioningEnabled = isProvisioningEnabled;
@@ -50,6 +52,7 @@ public class InboundProvisioningConfig implements Serializable {
 
     @Override
     public boolean equals(Object other) {
+
         if (other == this) {
             return true;
         }
@@ -62,37 +65,45 @@ public class InboundProvisioningConfig implements Serializable {
     }
 
     public String getProvisioningUserStore() {
+
         return provisioningUserStore;
     }
 
     public void setProvisioningUserStore(String provisioningUserStore) {
+
         this.provisioningUserStore = provisioningUserStore;
     }
 
     @Override
     public int hashCode() {
+
         return new HashCodeBuilder().append(provisioningUserStore).append(isProvisioningEnabled).append(isDumbMode)
                 .toHashCode();
     }
 
     public boolean isIsDumbMode() {
+
         return isDumbMode;
     }
 
     public void setIsDumbMode(boolean isDumbMode) {
+
         this.isDumbMode = isDumbMode;
     }
 
     public boolean isIsProvisioningEnabled() {
+
         return isProvisioningEnabled;
     }
 
     public void setIsProvisioningEnabled(boolean isProvisioningEnabled) {
+
         this.isProvisioningEnabled = isProvisioningEnabled;
     }
 
     @Override
     public String toString() {
+
         return new ToStringBuilder(this).append("isDumbMode", isDumbMode)
                 .append("isProvisioningEnabled", isProvisioningEnabled)
                 .append("provisioningUserStore", provisioningUserStore).toString();
