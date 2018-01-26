@@ -30,7 +30,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -40,7 +39,7 @@ import java.util.Set;
  */
 public class ApplicationUtility {
 
-    protected static final List<String> generatedFileList = Collections.unmodifiableList(new ArrayList<>());
+    public static final List<String> generatedFileList = new ArrayList<>();
     private static Log log = LogFactory.getLog(ApplicationUtility.class);
 
     public static void addToCleaningTask(String resource) {

@@ -9,6 +9,6 @@ export CLASSPATH=$CLASSPATH:org.wso2.carbon.demosuite-1.0.0-jar-with-dependencie
 $JAVA_HOME/bin/java org.wso2.carbon.solution.SolutionInstallationApplication $@
 
 
-
+#running tomcat server that is zipped with the resources.
 cd demo-resources/servers/tomcat/apache-tomcat-9.0.1/bin
 sh ./catalina.sh run

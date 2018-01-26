@@ -70,9 +70,11 @@ public class WebAppDeployer {
         //Creating tmp out folder.
         String outDirName = tomcatServerArtifact.getAbsoluteArtifactHomePath() + "out";
         File outDir = new File(outDirName);
-        boolean mkdirs = outDir.mkdirs();
-        if (!mkdirs) {
-            throw new CarbonSolutionException("Error occurred while creating out folder.");
+        if (!outDir.exists()) {
+            boolean mkdirs = outDir.mkdirs();
+            if (!mkdirs) {
+                throw new CarbonSolutionException("Error occurred while creating out folder.");
+            }
         }
         ApplicationUtility.addToCleaningTask(outDirName);
 
